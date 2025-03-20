@@ -2,7 +2,10 @@ import React from "react";
 import NavLink from "./NavLink";
 import { cn } from "@/utils/cn";
 
-type Props = { className?: string; type: "header" | "mobilemenu" };
+type Props = {
+  className?: string;
+  type: "header" | "mobilemenu";
+};
 
 function NavMenuHeader({ className, type }: Props) {
   return (
@@ -17,6 +20,7 @@ function NavMenuHeader({ className, type }: Props) {
             : "",
         )}
       />
+
       <NavLink
         href="#master"
         type="header"
