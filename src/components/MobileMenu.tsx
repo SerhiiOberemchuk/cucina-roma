@@ -1,31 +1,44 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import React, { useState } from "react";
-import NavMenuHeader from "./common/NavMenuHeader";
+import React, { useEffect, useState } from "react";
+import NavMenu from "./common/NavMenu";
 import BookingLink from "./common/BookingLink";
-import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
 
 function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const togleOpenMenu = () => setIsMenuOpen((prev) => !prev);
+  const toggleOpenMenu = () => setIsMenuOpen((prev) => !prev);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Очистка при unmount
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [isMenuOpen]);
+
   return (
     <>
       <button
         type="button"
         aria-expanded={isMenuOpen}
-        onClick={togleOpenMenu}
+        aria-label="Toggle mobile menu"
+        onClick={toggleOpenMenu}
         className="bg-yellow_main hover:bg-hover active:bg-pressed relative z-50 flex h-9 w-9 cursor-pointer flex-col items-center justify-center rounded-full transition-all duration-500 md:h-12 md:w-12 xl:hidden"
       >
         <div className="relative h-1.5 w-3">
           <div
-            className={clsx(
+            className={cn(
               "bg-main_blue absolute top-0 left-0 h-px w-3 rounded-[2px] transition-all duration-500",
               isMenuOpen && "translate-y-[2.5px] rotate-45 transform",
             )}
           ></div>
           <div
-            className={clsx(
+            className={cn(
               "bg-main_blue absolute bottom-0 left-0 h-px w-3 rounded-[2px] transition-all duration-500",
               isMenuOpen && "-translate-y-[2.5px] -rotate-45 transform",
             )}
@@ -33,30 +46,41 @@ function MobileMenu() {
         </div>
       </button>
 
-      <div
-        onClick={togleOpenMenu}
-        className={cn(
-          "fixed top-0 right-0 flex h-0 w-full justify-end bg-black/50",
-          isMenuOpen && "bottom-0 h-full",
-        )}
-      >
-        <div
-          onClick={(e) => e.stopPropagation()}
-          className={cn(
-            "border-yellow_main pointer-events-none flex h-screen w-full max-w-[360px] translate-y-[-100%] flex-col gap-[184px] rounded-3xl border-[1px] bg-white px-4 pt-[146px] transition-transform duration-500 ease-in-out md:max-w-[320px] md:px-10 md:pt-[158px] xl:hidden",
-            "shadow-2xl",
-            isMenuOpen && "translate-y-0",
-          )}
-        >
-          <NavMenuHeader
-            type="mobilemenu"
-            className="flex flex-col gap-6"
-            // onClick={togleOpenMenu}
-          />
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={toggleOpenMenu}
+              className="fixed inset-0 z-10 bg-black xl:hidden"
+            />
 
-          <BookingLink className="text-center" />
-        </div>
-      </div>
+            <motion.div
+              key="mobile-menu"
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              onClick={(e) => e.stopPropagation()}
+              className="border-yellow_main fixed top-0 right-0 z-10 flex h-screen w-full max-w-[360px] flex-col gap-[184px] rounded-3xl border bg-white px-4 pt-[146px] shadow-2xl md:max-w-[320px] md:px-10 md:pt-[158px] xl:hidden"
+            >
+              <NavMenu
+                type="mobilemenu"
+                className="flex flex-col gap-6"
+                onClick={toggleOpenMenu}
+              />
+
+              <div onClick={toggleOpenMenu}>
+                <BookingLink className="text-center" />
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
