@@ -7,7 +7,7 @@ import { dataMaster } from "../../../data/dataMaster";
 
 function ChooseMaster() {
   return (
-    <section className="py-[100px] xl:py-20">
+    <section className="py-[100px] xl:py-20" id="master">
       <Container>
         <SubtitlePoint
           text="україномовний туристичний проєкт"
