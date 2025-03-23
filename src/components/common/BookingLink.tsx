@@ -2,8 +2,6 @@ import { LINK_CALENDLY } from "@/data/linkClendly";
 import LinkYelow from "./LinkYelow";
 type Props = { className?: string };
 
-// const { LINK_CALENDLY } = process.env;
-
 function BookingLink({ className }: Props) {
   return (
     <LinkYelow
