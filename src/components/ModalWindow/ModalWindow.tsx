@@ -34,6 +34,7 @@ function ModalWindow() {
         onClick={(e) => e.stopPropagation()}
       >
         <CardModalWindow page={modalType} />
+
         <button
           onClick={closeModal}
           className="absolute top-5 right-10 cursor-pointer"

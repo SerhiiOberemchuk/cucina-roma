@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Cormorant_Garamond, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/layouts/Header";
@@ -32,6 +33,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
+      <head>
+        <Script
+          src="https://secure.wayforpay.com/server/pay-widget.js"
+          strategy="beforeInteractive"
+          id="widget-wfp-script"
+        />
+      </head>
       <link rel="shortcut icon" href="/icons/lady.svg" type="image/x-icon" />
       <body
         className={`${cormorantGaramond.variable} ${ibmPlexSerif.variable} antialiased`}

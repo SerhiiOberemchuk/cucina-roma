@@ -11,11 +11,16 @@ type Props = {
 function NavMenu({ className, type, onClick }: Props) {
   return (
     <nav className={cn(className)}>
-      <NavLink onClick={onClick} href="#about" type={type} linkName="Про нас" />
+      <NavLink
+        onClick={onClick}
+        href="/#about"
+        type={type}
+        linkName="Про нас"
+      />
 
       <NavLink
         onClick={onClick}
-        href="#master"
+        href="/#master"
         type={type}
         linkName="Майстер-класи"
       />
