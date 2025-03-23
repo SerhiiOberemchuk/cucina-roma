@@ -30,7 +30,7 @@ function ChooseMaster() {
               prise={item.prise}
               duration={item.duration}
               linkTitle={item.linkTitle}
-              href={item.href}
+              page={item.page}
             />
           ))}
         </ul>

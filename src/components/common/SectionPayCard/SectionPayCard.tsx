@@ -1,14 +1,13 @@
 import React from "react";
-import Container from "./Container";
-import SubtitlePoint from "./SubtitlePoint";
+import Container from "../Container";
+import SubtitlePoint from "../SubtitlePoint";
 import Image from "next/image";
-import TitleSection from "./TitleSection";
-import LinkYelow from "./LinkYelow";
-import TextBody from "./TextBody";
+import TitleSection from "../TitleSection";
+import LinkYelow from "../LinkYelow";
+import TextBody from "../TextBody";
+import ButtonBayCertificato from "./ButtonBayCertificato";
 
-type Props = {};
-
-function SectionPayCard({}: Props) {
+function SectionPayCard() {
   return (
     <section className="bg-blue py-[100px] xl:py-20">
       <Container>
@@ -55,11 +54,12 @@ function SectionPayCard({}: Props) {
                 </TextBody>
               </li>
               <li className="flex md:justify-end">
-                <LinkYelow
+                {/* <LinkYelow
                   href=""
                   linkTitle="Купити"
                   className="text-center md:w-fit"
-                />
+                /> */}
+                <ButtonBayCertificato modalType="/pay_card" />
               </li>
             </ul>
           </div>

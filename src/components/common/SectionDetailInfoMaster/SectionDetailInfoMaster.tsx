@@ -1,15 +1,15 @@
 import React from "react";
-import Container from "./Container";
-import WhatsAppLink from "./Links/WhatsAppLink";
-import SubtitlePoint from "./SubtitlePoint";
+import Container from "../Container";
+import WhatsAppLink from "../Links/WhatsAppLink";
+import SubtitlePoint from "../SubtitlePoint";
 import { dataDetailInfoMaster } from "@/data/dataDetailInfoMaster";
 import Image from "next/image";
-import IconPrice from "../../assets/icons/icon_price.svg";
-import IconTime from "../../assets/icons/icon_time.svg";
-import IconLoction from "../../assets/icons/icon_location.svg";
+import IconPrice from "@/assets/icons/icon_price.svg";
+import IconTime from "@/assets/icons/icon_time.svg";
+import IconLoction from "@/assets/icons/icon_location.svg";
 import { DataCardMaster, dataMaster } from "@/data/dataMaster";
-import LinkYelow from "./LinkYelow";
-import TextBody from "./TextBody";
+import TextBody from "../TextBody";
+import ButtonBuyMaster from "./ButtonBuyMaster";
 
 function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
   const { subtitle, imageUrl, title, location, describe } =
@@ -56,11 +56,12 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
                 </p>
               </li>
               <li className="flex md:justify-end">
-                <LinkYelow
+                {/* <LinkYelow
                   href=""
                   linkTitle="Замовити"
                   className="text-center md:w-fit"
-                />
+                /> */}
+                <ButtonBuyMaster page={page} />
               </li>
             </ul>
           </div>
