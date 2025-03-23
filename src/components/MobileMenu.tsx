@@ -17,7 +17,6 @@ function MobileMenu() {
       document.body.classList.remove("overflow-hidden");
     }
 
-    // Очистка при unmount
     return () => document.body.classList.remove("overflow-hidden");
   }, [isMenuOpen]);
 
