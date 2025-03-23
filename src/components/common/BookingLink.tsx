@@ -1,12 +1,13 @@
+import { LINK_CALENDLY } from "@/data/linkClendly";
 import LinkYelow from "./LinkYelow";
 type Props = { className?: string };
 
-const { LINK_CALENDLY } = process.env;
+// const { LINK_CALENDLY } = process.env;
 
 function BookingLink({ className }: Props) {
   return (
     <LinkYelow
-      href={LINK_CALENDLY || "/"}
+      href={LINK_CALENDLY}
       className={className}
       linkTitle="Бронювати"
     />
