@@ -8,7 +8,6 @@ import "swiper/css/pagination";
 import { EffectFade, Autoplay, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { div } from "framer-motion/client";
 
 const images = {
   mobile: [

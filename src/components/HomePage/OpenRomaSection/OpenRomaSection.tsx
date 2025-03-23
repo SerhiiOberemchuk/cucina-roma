@@ -2,9 +2,7 @@ import Container from "@/components/common/Container";
 import SubtitlePoint from "@/components/common/SubtitlePoint";
 import React from "react";
 
-type Props = {};
-
-function OpenRomaSection({}: Props) {
+function OpenRomaSection() {
   return (
     <section className="bg-blue py-[100px] xl:py-20">
       <Container className="flex flex-col justify-center gap-3">
