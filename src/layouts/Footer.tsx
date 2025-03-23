@@ -12,9 +12,12 @@ function Footer() {
       <Container className="flex flex-col gap-16 md:gap-10">
         <div className="flex flex-col gap-9 md:flex-row md:justify-between">
           <Logo type="footer" />
-          <NavMenu type="footer" className="flex flex-col gap-4" />
+          <NavMenu
+            type="footer"
+            className="flex flex-col gap-4 xl:w-[304px] xl:flex-row xl:justify-between xl:gap-0"
+          />
           <div className="flex flex-col gap-4 md:gap-6">
-            <p className="big_text_medium text-white">Підпишись</p>
+            <p className="btn_text text-white">Підпишись</p>
             <ul className="flex items-center md:justify-around">
               <li className="h-8">
                 <WhatsAppLink place="footer" />

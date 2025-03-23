@@ -3,7 +3,7 @@ import SubtitlePoint from "@/components/common/SubtitlePoint";
 import TitleSection from "@/components/common/TitleSection";
 import React from "react";
 import CardMaster from "./CardMaster";
-import { dataMaster } from "./dataMaster";
+import { dataMaster } from "../../../data/dataMaster";
 
 function ChooseMaster() {
   return (
