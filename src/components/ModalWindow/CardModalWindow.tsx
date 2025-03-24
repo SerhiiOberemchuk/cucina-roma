@@ -8,7 +8,7 @@ function CardModalWindow({ page }: { page: PageType }) {
     (item) => item.page === page,
   )[0];
   return (
-    <div className="w-full max-w-[494px]">
+    <div className="w-full xl:max-w-[494px]">
       <Image src={imgUrl} width={494} height={220} alt={title} />
       <div className="mt-6">
         {page !== "/pay_card" ? (

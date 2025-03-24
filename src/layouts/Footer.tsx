@@ -18,7 +18,7 @@ function Footer() {
           />
           <div className="flex flex-col gap-4 md:gap-6">
             <p className="btn_text text-white">Підпишись</p>
-            <ul className="flex items-center md:justify-around">
+            <ul className="flex items-center gap-4 md:justify-around md:gap-0">
               <li className="h-8">
                 <WhatsAppLink place="footer" />
               </li>
