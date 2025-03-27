@@ -28,7 +28,7 @@ export default function WayForPayButton({ className }: { className?: string }) {
         setIsLoder(false);
       }
     } catch (error) {
-      console.log("Помилка при оплаті");
+      console.error("Помилка при оплаті", error);
       setIsLoder(false);
     }
   };
