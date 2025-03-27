@@ -8,7 +8,7 @@ function ButtonYelow({ title, className, onClick }: Props) {
       type="button"
       onClick={onClick}
       className={cn(
-        "bg-yellow_main btn_text text-main_blue active:bg-pressed hover:bg-hover w-full rounded-3xl px-8 py-2.5 text-[16px] leading-[150%] font-medium transition-all duration-300",
+        "bg-yellow_main btn_text text-main_blue active:bg-pressed hover:bg-hover w-full cursor-pointer rounded-3xl px-8 py-2.5 text-[16px] leading-[150%] font-medium transition-all duration-300",
         className,
       )}
     >

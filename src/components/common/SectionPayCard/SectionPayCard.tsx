@@ -3,7 +3,7 @@ import SubtitlePoint from "../SubtitlePoint";
 import Image from "next/image";
 import TitleSection from "../TitleSection";
 import TextBody from "../TextBody";
-import ButtonBayCertificato from "./ButtonBayCertificato";
+import WayForPayButton from "@/components/WayForPay/WayForPayButton";
 
 function SectionPayCard() {
   return (
@@ -52,7 +52,7 @@ function SectionPayCard() {
                 </TextBody>
               </li>
               <li className="flex md:justify-end">
-                <ButtonBayCertificato modalType="/pay_card" />
+                <WayForPayButton />
               </li>
             </ul>
           </div>
