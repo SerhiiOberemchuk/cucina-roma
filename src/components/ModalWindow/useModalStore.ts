@@ -1,7 +1,7 @@
 import { DataCardMaster } from "@/data/dataMaster";
 import { create } from "zustand";
 
-export type PageType = "/initial" | "/pay_card" | DataCardMaster["page"];
+export type PageType = "/pay_card" | DataCardMaster["page"];
 
 export type ModalState = {
   modalType: PageType;
@@ -11,8 +11,8 @@ export type ModalState = {
 };
 
 export const useModalStore = create<ModalState>()((set) => ({
-  modalType: "/initial",
+  modalType: "/pay_card",
   isModalOpen: false,
   openModal: (modalType) => set(() => ({ isModalOpen: true, modalType })),
-  closeModal: () => set(() => ({ isModalOpen: false, modalType: "/initial" })),
+  closeModal: () => set(() => ({ isModalOpen: false, modalType: "/pay_card" })),
 }));

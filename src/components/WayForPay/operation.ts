@@ -24,7 +24,7 @@ export async function getForm() {
       language: "UA",
       //   paymentSystems: ["card", "googlePay", "applePay", "privat24"],
       orderReference: `order-${Date.now()}`,
-      //   returnUrl: process.env.LINK_CALENDLY!,
+      returnUrl: process.env.LINK_CALENDLY!,
     },
   );
 
