@@ -1,5 +1,5 @@
 export const dataDetailInfoMaster = {
-  "/pizza_tiramisu": {
+  pizza_tiramisu: {
     subtitle: "ПІЦА ТА ТІРАМІСУ",
     imageUrl: "/images/info_pizza.jpg",
     title: "Приготування піци та тірамісу",
@@ -10,7 +10,7 @@ export const dataDetailInfoMaster = {
       "Пориньте в атмосферу італійської кухні та відчуйте себе справжнім римлянином!",
     ],
   },
-  "/pasta_tiramisu": {
+  pasta_tiramisu: {
     subtitle: "пастА ТА ТІРАМІСУ",
     imageUrl: "/images/info_pasta.jpg",
     title: "Приготування пасти та тірамісу",
@@ -21,7 +21,7 @@ export const dataDetailInfoMaster = {
       "Скуштуйте Рим на смак та відчуйте себе італійцем!",
     ],
   },
-  "/nioki_tiramisu": {
+  nioki_tiramisu: {
     subtitle: "ньокі ТА ТІРАМІСУ",
     imageUrl: "/images/info_nioki.jpg",
     title: "Приготування ньокі та тірамісу",
@@ -32,7 +32,7 @@ export const dataDetailInfoMaster = {
       "Відкрийте смак Італії та закохайтеся в ньоккі!",
     ],
   },
-  "/wino": {
+  wino: {
     subtitle: "дегустація вина та закуски",
     imageUrl: "/images/info_wino.jpg",
     title: "Винна дегустація та італійські закуски",

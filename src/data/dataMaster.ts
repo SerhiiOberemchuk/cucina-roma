@@ -4,7 +4,7 @@ export type DataCardMaster = {
   prise: number;
   duration: number;
   linkTitle: string;
-  page: "/pizza_tiramisu" | "/pasta_tiramisu" | "/nioki_tiramisu" | "/wino";
+  page: "pizza_tiramisu" | "pasta_tiramisu" | "nioki_tiramisu" | "wino";
 };
 
 export const dataMaster: DataCardMaster[] = [
@@ -14,7 +14,7 @@ export const dataMaster: DataCardMaster[] = [
     prise: 80,
     duration: 2,
     linkTitle: "Замовити",
-    page: "/pizza_tiramisu",
+    page: "pizza_tiramisu",
   },
   {
     src: "/images/master_pasta.jpg",
@@ -22,7 +22,7 @@ export const dataMaster: DataCardMaster[] = [
     prise: 80,
     duration: 2,
     linkTitle: "Замовити",
-    page: "/pasta_tiramisu",
+    page: "pasta_tiramisu",
   },
   {
     src: "/images/master_gniochi.jpg",
@@ -30,7 +30,7 @@ export const dataMaster: DataCardMaster[] = [
     prise: 80,
     duration: 2,
     linkTitle: "Замовити",
-    page: "/nioki_tiramisu",
+    page: "nioki_tiramisu",
   },
   {
     src: "/images/master_vino.jpg",
@@ -38,6 +38,6 @@ export const dataMaster: DataCardMaster[] = [
     prise: 80,
     duration: 2,
     linkTitle: "Замовити",
-    page: "/wino",
+    page: "wino",
   },
 ];

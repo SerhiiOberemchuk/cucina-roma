@@ -29,7 +29,7 @@ export const dataModalWindow: Data[] = [
     root: "Сертифікат є дійсним після покупки протягом 2025 року.",
   },
   {
-    page: "/pizza_tiramisu",
+    page: "pizza_tiramisu",
     subtitle: "Майстер-клас",
     imgUrl: "/images/modal_pizza.jpg",
     title: "“Приготування піцци та тірамісу”",
@@ -37,7 +37,7 @@ export const dataModalWindow: Data[] = [
     root,
   },
   {
-    page: "/pasta_tiramisu",
+    page: "pasta_tiramisu",
     subtitle: "Майстер-клас",
     imgUrl: "/images/modal_pasta.jpg",
     title: "“Приготування пасти та тірамісу”",
@@ -45,7 +45,7 @@ export const dataModalWindow: Data[] = [
     root,
   },
   {
-    page: "/nioki_tiramisu",
+    page: "nioki_tiramisu",
     subtitle: "Майстер-клас",
     imgUrl: "/images/modal_nioki.jpg",
     title: "“Приготування ньокі та тірамісу”",
@@ -53,7 +53,7 @@ export const dataModalWindow: Data[] = [
     root,
   },
   {
-    page: "/wino",
+    page: "wino",
     subtitle: "Майстер-клас",
     imgUrl: "/images/modal_wine.jpg",
     title: "“Винна дегустація та італійські закуски”",

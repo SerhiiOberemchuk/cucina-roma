@@ -26,7 +26,11 @@ function CardMaster({
           <p className="big_text">{prise} €</p>
         </li>
       </ul>
-      <LinkYelow href={page} linkTitle={linkTitle} className="text-center" />
+      <LinkYelow
+        href={`master/${page}`}
+        linkTitle={linkTitle}
+        className="text-center"
+      />
     </div>
   );
 }

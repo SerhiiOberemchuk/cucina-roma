@@ -3,7 +3,7 @@
 import ButtonYelow from "../common/ButtonYelow";
 import { getForm } from "./operation";
 
-export default function WayForPayButton() {
+export default function WayForPayButton({ className }: { className?: string }) {
   const handleGoToPay = async () => {
     const html = await getForm();
 
@@ -21,5 +21,7 @@ export default function WayForPayButton() {
     else console.error("Форма не знайдена");
   };
 
-  return <ButtonYelow onClick={handleGoToPay} title="Купити" />;
+  return (
+    <ButtonYelow onClick={handleGoToPay} title="Купити" className={className} />
+  );
 }

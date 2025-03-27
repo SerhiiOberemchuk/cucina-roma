@@ -52,7 +52,7 @@ function SectionPayCard() {
                 </TextBody>
               </li>
               <li className="flex md:justify-end">
-                <WayForPayButton />
+                <WayForPayButton className="w-fit" />
               </li>
             </ul>
           </div>
