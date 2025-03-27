@@ -23,15 +23,16 @@ function ChooseMaster() {
         </p>
         <ul className="grid grid-cols-1 justify-items-center gap-y-10 md:grid-cols-2 md:gap-x-5 md:gap-y-6 xl:grid-cols-4">
           {dataMaster.map((item, index) => (
-            <CardMaster
-              src={item.src}
-              name={item.name}
-              key={index}
-              prise={item.prise}
-              duration={item.duration}
-              linkTitle={item.linkTitle}
-              page={item.page}
-            />
+            <li key={index}>
+              <CardMaster
+                src={item.src}
+                name={item.name}
+                prise={item.prise}
+                duration={item.duration}
+                linkTitle={item.linkTitle}
+                page={item.page}
+              />
+            </li>
           ))}
         </ul>
       </Container>

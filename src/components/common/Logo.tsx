@@ -17,7 +17,7 @@ function Logo({ className, type }: Props) {
       )}
     >
       <Image
-        src={"/icons/лого горизонтальне.svg"}
+        src={"/icons/logo_horiz.svg"}
         width={211}
         height={67}
         alt="Посилання на головну сторінку"
