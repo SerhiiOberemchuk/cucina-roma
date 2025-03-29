@@ -9,6 +9,7 @@ export default function WayForPayButton({ className }: { className?: string }) {
   const [isLoader, setIsLoder] = useState(false);
   const handleGoToPay = async () => {
     setIsLoder(true);
+    document.body.classList.add("overflow-hidden");
     try {
       const html = await getForm();
 
@@ -30,6 +31,9 @@ export default function WayForPayButton({ className }: { className?: string }) {
     } catch (error) {
       console.error("Помилка при оплаті", error);
       setIsLoder(false);
+    } finally {
+      setIsLoder(false);
+      document.body.classList.remove("overflow-hidden");
     }
   };
 
