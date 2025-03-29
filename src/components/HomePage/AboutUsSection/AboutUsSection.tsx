@@ -51,14 +51,14 @@ function AboutUsSection() {
             </ul>
           </div>
           <Image
-            className="mx-auto mt-20 rounded-3xl md:hidden"
+            className="mx-auto mt-20 w-full rounded-3xl md:hidden"
             src={"/images/About360.jpg"}
             width={328}
             height={580}
             alt="Про нас"
           />
           <Image
-            className="mx-auto mt-20 hidden rounded-3xl md:block xl:hidden"
+            className="mx-auto mt-20 hidden w-full rounded-3xl md:block xl:hidden"
             src={"/images/About768.jpg"}
             width={688}
             height={580}

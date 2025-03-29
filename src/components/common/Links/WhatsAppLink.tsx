@@ -1,5 +1,4 @@
-import WhatsUpIcon from "@/assets/icons/whats_up.svg";
-import WhatsAppIconGreen from "@/assets/icons/IconWhatsAppGreen.svg";
+import WhatsUpIcon from "@/assets/icons/whatsapp.svg";
 import { cn } from "@/utils/cn";
 
 type Props = { place: "footer" | "hero_section"; className?: string };
@@ -18,12 +17,14 @@ function WhatsAppLink({ place, className }: Props) {
         className,
       )}
     >
-      {place === "footer" && (
-        <WhatsUpIcon className="fill-yellow_main stroke-main_blue hover:fill-hover active:fill-pressed transition-all duration-500" />
-      )}
-      {place === "hero_section" && (
-        <WhatsAppIconGreen className="fill-yellow_main stroke-main_blue hover:fill-hover active:fill-pressed transition-all duration-500" />
-      )}
+      <WhatsUpIcon
+        className={cn(
+          "hover:fill-hover active:fill-pressed transition-all duration-500",
+          place === "hero_section"
+            ? "fill-whatsup h-12 w-12"
+            : "fill-yellow_main h-6 w-6",
+        )}
+      />
     </a>
   );
 }

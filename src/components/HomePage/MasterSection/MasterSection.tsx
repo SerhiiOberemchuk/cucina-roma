@@ -46,14 +46,14 @@ function MasterSection() {
             </ul>
           </div>
           <Image
-            className="mx-auto mt-20 md:hidden"
+            className="mx-auto mt-20 w-full md:hidden"
             src={"/images/master360.jpg"}
             width={328}
             height={580}
             alt="Зображення піци"
           />
           <Image
-            className="mx-auto mt-20 hidden md:block xl:hidden"
+            className="mx-auto mt-20 hidden w-full md:block xl:hidden"
             src={"/images/master768.jpg"}
             width={688}
             height={580}

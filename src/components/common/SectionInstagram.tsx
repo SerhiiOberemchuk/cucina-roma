@@ -10,7 +10,7 @@ function SectionInstagram() {
       <Container>
         <TitleSection title="Наш інстаграм" />
         <InstagramLink isIcon={false} />
-        <ul className="mt-2.5 flex justify-center gap-5">
+        <ul className="mt-2.5 flex justify-around gap-5">
           <li className="relative w-fit">
             <Image
               src={"/images/Instagram_1.jpg"}
