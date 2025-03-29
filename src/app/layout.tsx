@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Cormorant_Garamond, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/layouts/Header";
@@ -27,6 +26,30 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icons/lady.svg",
   },
+  metadataBase: new URL("https://www.cucinaroma.com.ua"),
+  openGraph: {
+    title: "Cucina Roma",
+    description:
+      "Авторські екскурсії в Римі. Ватикан, гастротури, трансфери, організація свят. Українською мовою.",
+    url: "https://www.cucinaroma.com.ua",
+    siteName: "Cucina Roma",
+    type: "website",
+    locale: "uk_UA",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cucina Roma - Твій гід у Римі",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cucina Roma",
+    description: "Мрії про Рим та справжню італійську кухню стають реальністю.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -36,14 +59,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <head>
-        <Script
-          src="https://secure.wayforpay.com/server/pay-widget.js"
-          strategy="beforeInteractive"
-          id="widget-wfp-script"
-        />
-      </head>
-
       <body
         className={`${cormorantGaramond.variable} ${ibmPlexSerif.variable} antialiased`}
       >
