@@ -1,13 +1,13 @@
-import Container from "../Container";
-import SubtitlePoint from "../SubtitlePoint";
+import Container from "../../Container";
+import SubtitlePoint from "../../SubtitlePoint";
 import Image from "next/image";
-import TitleSection from "../TitleSection";
-import TextBody from "../TextBody";
+import TitleSection from "../../TitleSection";
+import TextBody from "../../TextBody";
 import WayForPayButton from "@/components/WayForPay/WayForPayButton";
 
 function SectionPayCard() {
   return (
-    <section className="bg-blue py-[100px] xl:py-20">
+    <section className="bg-blue py-10 xl:py-20">
       <Container>
         <SubtitlePoint text="подаруй враження" />
         <div className="xl:flex xl:items-center xl:justify-between">

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import NavMenu from "./common/NavMenu";
 import BookingLink from "./common/BookingLink";
 import { motion, AnimatePresence } from "framer-motion";

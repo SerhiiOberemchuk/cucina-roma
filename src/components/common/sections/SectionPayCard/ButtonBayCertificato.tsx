@@ -3,7 +3,7 @@ import {
   ModalState,
   useModalStore,
 } from "@/components/ModalWindow/useModalStore";
-import ButtonYelow from "../ButtonYelow";
+import ButtonYelow from "../../ButtonYelow";
 
 const ButtonBayCertificato = ({ modalType }: Pick<ModalState, "modalType">) => {
   const { openModal } = useModalStore();

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import { PageType } from "./useModalStore";
 import { dataModalWindow } from "@/data/dataModalWindow";
 

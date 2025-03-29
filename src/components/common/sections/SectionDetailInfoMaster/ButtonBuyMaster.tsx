@@ -1,7 +1,7 @@
 "use client";
 
 import { DataCardMaster } from "@/data/dataMaster";
-import ButtonYelow from "../ButtonYelow";
+import ButtonYelow from "../../ButtonYelow";
 import { useModalStore } from "@/components/ModalWindow/useModalStore";
 
 function ButtonBuyMaster({ page }: Pick<DataCardMaster, "page">) {

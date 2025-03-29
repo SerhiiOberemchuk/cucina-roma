@@ -3,6 +3,7 @@ import Logo from "@/components/common/Logo";
 import NavMenu from "@/components/common/NavMenu";
 import InstagramLink from "@/components/common/Links/InstagramLink";
 import WhatsAppLink from "@/components/common/Links/WhatsAppLink";
+import Link from "next/link";
 
 function Footer() {
   const data = new Date();
@@ -14,7 +15,7 @@ function Footer() {
           <Logo type="footer" />
           <NavMenu
             type="footer"
-            className="flex flex-col gap-4 xl:w-[304px] xl:flex-row xl:justify-between xl:gap-0"
+            className="flex flex-col gap-4 xl:w-[214px] xl:flex-row xl:justify-between xl:gap-0"
           />
           <div className="flex flex-col gap-4 md:gap-6">
             <p className="btn_text text-white">Підпишись</p>
@@ -28,9 +29,16 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <p className="border-grey_stroke_logo w-full border-t py-6 text-center text-[12px] leading-[150%] font-normal text-white md:text-[16px] md:font-medium md:tracking-wide">
-          <span>{data.getFullYear()}</span> © Усі права захищені
-        </p>
+        <div className="border-grey_stroke_logo w-full border-t py-6 text-center text-[12px] leading-[150%] font-normal text-white md:text-[16px] md:font-medium md:tracking-wide">
+          <Link
+            href={"/"}
+            className="hover:text-hover active:text-pressed transition-all duration-300"
+          >
+            Політика та приватність <span>{data.getFullYear()}</span> ©{" "}
+            <br className="md:hidden" />
+            Усі права захищені
+          </Link>
+        </div>
       </Container>
     </footer>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import WhatsAppLink from "../../common/Links/WhatsAppLink";
 import Container from "../../common/Container";
 import HeroSlider from "./Slider";

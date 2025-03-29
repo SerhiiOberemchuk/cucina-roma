@@ -1,7 +1,6 @@
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 type Props = { className?: string; type: "header" | "footer" };
 

@@ -4,11 +4,10 @@ import TextBody from "@/components/common/TextBody";
 import TextBodyPoint from "@/components/common/TextBodyPoint";
 import TitleSection from "@/components/common/TitleSection";
 import Image from "next/image";
-import React from "react";
 
 function AboutUsSection() {
   return (
-    <section className="py-[100px] xl:py-20" id="about">
+    <section className="py-10 xl:py-20" id="about">
       <Container>
         <SubtitlePoint text="україномовний туристичний проєкт" />
 

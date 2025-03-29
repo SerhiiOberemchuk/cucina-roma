@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function MasterSection() {
   return (
-    <section className="py-[100px] xl:py-20">
+    <section className="py-10 xl:py-20">
       <Container>
         <SubtitlePoint text="Що ми пропонуємо" />
         <div className="mt-6 xl:flex xl:gap-[120px]">

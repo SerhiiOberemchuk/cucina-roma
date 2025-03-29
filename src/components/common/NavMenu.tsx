@@ -1,6 +1,4 @@
-import React from "react";
 import { cn } from "@/utils/cn";
-import Link from "next/link";
 
 type Props = {
   className?: string;
@@ -37,19 +35,18 @@ type PropsLink = {
 
 function NavLink({ href, linkName, type, onClick }: PropsLink) {
   return (
-    <Link
+    <a
       onClick={onClick}
       href={href}
       className={cn(
-        "leading-[150%] font-medium tracking-[0.01em] transition-all duration-500",
-        type === "header" &&
-          "hover:text-hover active:text-pressed px-4 py-3 text-[14px] text-white uppercase",
+        "hover:text-hover active:text-pressed leading-[150%] font-medium tracking-[0.01em] transition-all duration-500",
+        type === "header" && "px-4 py-3 text-[14px] text-white uppercase",
         type === "mobilemenu" &&
           "px-4 py-3 text-[14px] leading-[130%] uppercase md:text-[14px]",
         type === "footer" && "tracking-wide text-white",
       )}
     >
       {linkName}
-    </Link>
+    </a>
   );
 }

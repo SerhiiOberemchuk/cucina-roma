@@ -1,14 +1,13 @@
-import React from "react";
-import Container from "../Container";
-import WhatsAppLink from "../Links/WhatsAppLink";
-import SubtitlePoint from "../SubtitlePoint";
+import Container from "../../Container";
+import WhatsAppLink from "../../Links/WhatsAppLink";
+import SubtitlePoint from "../../SubtitlePoint";
 import { dataDetailInfoMaster } from "@/data/dataDetailInfoMaster";
 import Image from "next/image";
 import IconPrice from "@/assets/icons/icon_price.svg";
 import IconTime from "@/assets/icons/icon_time.svg";
 import IconLoction from "@/assets/icons/icon_location.svg";
 import { DataCardMaster, dataMaster } from "@/data/dataMaster";
-import TextBody from "../TextBody";
+import TextBody from "../../TextBody";
 import ButtonBuyMaster from "./ButtonBuyMaster";
 
 function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
@@ -19,7 +18,7 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
   )[0];
 
   return (
-    <section className="py-[100px] xl:py-20">
+    <section className="py-10 xl:py-20">
       <Container className="relative">
         <WhatsAppLink place="hero_section" />
         <SubtitlePoint text={subtitle} />

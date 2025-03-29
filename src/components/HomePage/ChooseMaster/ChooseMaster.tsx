@@ -1,13 +1,12 @@
 import Container from "@/components/common/Container";
 import SubtitlePoint from "@/components/common/SubtitlePoint";
 import TitleSection from "@/components/common/TitleSection";
-import React from "react";
 import CardMaster from "./CardMaster";
 import { dataMaster } from "../../../data/dataMaster";
 
 function ChooseMaster() {
   return (
-    <section className="py-[100px] xl:py-20" id="master">
+    <section className="py-10 xl:py-20" id="master">
       <Container>
         <SubtitlePoint
           text="україномовний туристичний проєкт"
