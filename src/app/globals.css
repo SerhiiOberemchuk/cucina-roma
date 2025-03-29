@@ -9,6 +9,7 @@
   --color-pink_italy: #c66a6b;
   --color-green_italy: #29595c;
   --color-main_blue: #1d3149;
+  --color-bg_blue: #f4f9ff;
   --color-whatsup: #1faf38;
   --color-text: #0c1420;
   --color-grey_bg_logo: #d9d9d9;
@@ -20,19 +21,19 @@
 @theme inline {
   /* --color-background: var(--background);
   --color-foreground: var(--foreground); */
-  --color-yellow_main: #f2a83b;
-  --color-pressed: #df8500;
-  --color-hover: #f8c984;
-  --color-pink_italy: #c66a6b;
-  --color-green_italy: #29595c;
-  --color-main_blue: #1d3149;
-  --color-blue: #f4f9ff;
-  --color-whatsup: #1faf38;
-  --color-text: #0c1420;
-  --color-grey_bg_logo: #d9d9d9;
-  --color-grey_logo_shadow_2: #bdbdbd;
-  --color-logo_shadow: #d0d0d0;
-  --color-grey_stroke_logo: #5f5f5f;
+  --color-yellow_main: var(--color-yellow_main);
+  --color-pressed: var(--color-pressed);
+  --color-hover: var(--color-hover);
+  --color-pink_italy: var(--color-pink_italy);
+  --color-green_italy: var(--color-green_italy);
+  --color-main_blue: var(--color-main_blue);
+  --color-blue: var(--color-bg_blue);
+  --color-whatsup: var(--color-whatsup);
+  --color-text: var(--color-text);
+  --color-grey_bg_logo: var(--color-grey_bg_logo);
+  --color-grey_logo_shadow_2: var(--color-grey_logo_shadow_2);
+  --color-logo_shadow: var(--color-logo_shadow);
+  --color-grey_stroke_logo: var(--color-grey_stroke_logo);
 
   --font-sans: var(--font-cormorant_garamond);
   --font-mono: var(--font-IBM_plex_serif);
@@ -55,9 +56,7 @@ body {
   font-size: 16px;
   line-height: 150%;
 }
-/* 400 normal */
-/* 500-medium */
-/* 600 semibold */
+
 .textH1 {
   font-family: var(--font-cormorant_garamond);
   font-size: 54px;
@@ -126,13 +125,13 @@ body {
 .swiper {
   position: initial !important;
 }
-.swiper-pagination {
-  /* bottom: 0px !important; */
-}
+/* .swiper-pagination {
+  bottom: 0px !important;
+} */
 
 .swiper-pagination-bullet {
   background-color: var(--color-logo_shadow) !important;
-  opacity: 0.7;
+  opacity: 1 !important;
   width: 6px !important;
   height: 6px !important;
   border-radius: 12px !important;

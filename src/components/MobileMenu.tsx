@@ -60,9 +60,9 @@ function MobileMenu() {
 
             <motion.div
               key="mobile-menu"
-              initial={{ y: "-100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-100%" }}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               onClick={(e) => e.stopPropagation()}
               className="border-yellow_main fixed top-0 right-0 z-10 flex h-screen w-full max-w-[360px] flex-col gap-[184px] overflow-y-auto rounded-3xl border bg-white px-4 pt-[146px] shadow-2xl md:max-w-[320px] md:px-10 md:pt-[158px] xl:hidden"
@@ -73,7 +73,7 @@ function MobileMenu() {
                 onClick={toggleOpenMenu}
               />
 
-              <div onClick={toggleOpenMenu}>
+              <div onClick={toggleOpenMenu} className="flex">
                 <BookingLink className="text-center" />
               </div>
             </motion.div>

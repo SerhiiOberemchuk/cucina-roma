@@ -45,7 +45,7 @@ function NavLink({ href, linkName, type, onClick }: PropsLink) {
         type === "header" &&
           "hover:text-hover active:text-pressed px-4 py-3 text-[14px] text-white uppercase",
         type === "mobilemenu" &&
-          "px-4 py-3 text-[20px] leading-[130%] uppercase md:text-[24px]",
+          "px-4 py-3 text-[14px] leading-[130%] uppercase md:text-[14px]",
         type === "footer" && "tracking-wide text-white",
       )}
     >
