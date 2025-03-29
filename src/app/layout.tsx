@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "Cucina Roma",
   description:
     "Мрії про Рим та справжню італійську кухню стають реальністю. Відкривайте Італію з душею разом з нами. Вітаємо! Мрієте про подорож до Рима? Ми — україномовний туристичний проєкт, який допоможе вам відкрити Італію. Авторські екскурсії античним Римом. Ватикан. Індивідуальні екскурсії за межі Риму. Організація та комфортний трансфер. Гастрономічні екскурсії для поціновувачів традиційної італійської кухні. Розробка індивідуальних програм для груп туристів, повне супроводження. Організація особливих подій у топових локаціях.",
+  icons: {
+    icon: "/icons/lady.svg",
+  },
 };
 
 export default function RootLayout({
@@ -40,7 +43,7 @@ export default function RootLayout({
           id="widget-wfp-script"
         />
       </head>
-      <link rel="shortcut icon" href="/icons/lady.svg" type="image/x-icon" />
+
       <body
         className={`${cormorantGaramond.variable} ${ibmPlexSerif.variable} antialiased`}
       >

@@ -1,23 +1,24 @@
-// import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
-// const nextConfig: NextConfig = {
-//   /* config options here */
-// };
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
 
-// export default nextConfig;
-// module.exports = {
-//   experimental: {
-//     turbo: {
-//       rules: {
-//         "*.svg": {
-//           loaders: ["@svgr/webpack"],
-//           as: "*.js",
-//         },
-//       },
-//     },
-//   },
-// };
-module.exports = {
+  async redirects() {
+    return [
+      {
+        source: "/(.*)",
+        has: [
+          {
+            type: "host",
+            value: "cucinaroma.com.ua",
+          },
+        ],
+        destination: "https://www.cucinaroma.com.ua/:1",
+        permanent: true,
+      },
+    ];
+  },
+
   webpack(config: any) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule: any) =>
@@ -48,3 +49,5 @@ module.exports = {
 
   // ...other config
 };
+
+export default nextConfig;
