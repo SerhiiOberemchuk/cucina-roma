@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "uk_UA",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/hero_foto1.jpg",
         width: 1200,
         height: 630,
         alt: "Cucina Roma - Твій гід у Римі",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cucina Roma",
     description: "Мрії про Рим та справжню італійську кухню стають реальністю.",
-    images: ["/og-image.jpg"],
+    images: ["/images/hero_foto1.jpg"],
   },
 };
 
