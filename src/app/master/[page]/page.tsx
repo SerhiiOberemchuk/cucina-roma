@@ -1,6 +1,5 @@
 import SectionDetailInfoMaster from "@/components/common/sections/SectionDetailInfoMaster/SectionDetailInfoMaster";
-import SectionInstagram from "@/components/common/sections/SectionInstagram";
-import SectionPayCard from "@/components/common/sections/SectionPayCard/SectionPayCard";
+
 import { DataCardMaster } from "@/data/dataMaster";
 
 export default async function MasterPage({
@@ -10,11 +9,5 @@ export default async function MasterPage({
 }) {
   const { page } = await params;
 
-  return (
-    <>
-      <SectionDetailInfoMaster page={page} />
-      <SectionPayCard />
-      <SectionInstagram />
-    </>
-  );
+  return <SectionDetailInfoMaster page={page} />;
 }

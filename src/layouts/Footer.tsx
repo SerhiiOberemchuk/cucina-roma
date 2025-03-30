@@ -31,7 +31,7 @@ function Footer() {
         </div>
         <div className="border-grey_stroke_logo w-full border-t py-6 text-center text-[12px] leading-[150%] font-normal text-white md:text-[16px] md:font-medium md:tracking-wide">
           <Link
-            href={"/"}
+            href={"/docs"}
             className="hover:text-hover active:text-pressed transition-all duration-300"
           >
             Політика та приватність <span>{data.getFullYear()}</span> ©{" "}
