@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 import ModalWindow from "@/components/ModalWindow/ModalWindow";
+import Cookies from "@/components/Cookies";
 
 const cormorantGaramond = Cormorant_Garamond({
   weight: ["400", "500", "600"],
@@ -66,6 +67,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <ModalWindow />
+        <Cookies />
       </body>
     </html>
   );
