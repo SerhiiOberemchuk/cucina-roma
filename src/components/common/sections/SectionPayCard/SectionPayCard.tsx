@@ -3,7 +3,7 @@ import SubtitlePoint from "../../SubtitlePoint";
 import Image from "next/image";
 import TitleSection from "../../TitleSection";
 import TextBody from "../../TextBody";
-import WayForPayButton from "@/components/WayForPay/WayForPayButton";
+import ButtonYelow from "../../ButtonYelow";
 
 function SectionPayCard() {
   return (
@@ -52,7 +52,11 @@ function SectionPayCard() {
                 </TextBody>
               </li>
               <li className="flex md:justify-end">
-                <WayForPayButton className="w-fit" />
+                <ButtonYelow
+                  // onClick={() => {}}
+                  title="Тут колись щось буде"
+                  className="w-fit"
+                />
               </li>
             </ul>
           </div>

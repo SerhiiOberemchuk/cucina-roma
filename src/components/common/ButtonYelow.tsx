@@ -1,6 +1,6 @@
 import { cn } from "@/utils/cn";
 
-type Props = { title: string; className?: string; onClick: () => void };
+type Props = { title: string; className?: string; onClick?: () => void };
 
 function ButtonYelow({ title, className, onClick }: Props) {
   return (
