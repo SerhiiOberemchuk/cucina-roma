@@ -42,6 +42,7 @@ function FormGetUserData({
         return { success: false, message: "Помилка при надсиланні." };
       }
     } catch (error) {
+      console.error("Error:", error);
       return {
         success: false,
         message: "Помилка мережі або сервера. Спробуйте ще раз.",

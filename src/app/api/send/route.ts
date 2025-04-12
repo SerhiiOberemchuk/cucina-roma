@@ -34,9 +34,6 @@ export async function POST(req: Request) {
       { status: 200 },
     );
   } catch (error) {
-    NextResponse.json(
-      { success: false, message: "Виникла помилка при надсиланні пошти." },
-      { status: 500 },
-    );
+    NextResponse.json({ success: false, message: error }, { status: 500 });
   }
 }
