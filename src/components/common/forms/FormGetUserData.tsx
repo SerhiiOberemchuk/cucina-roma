@@ -3,9 +3,8 @@
 import React, { useActionState, useEffect } from "react";
 import ButtonYelow from "../ButtonYelow";
 import { cn } from "@/utils/cn";
-import { handleActionForm } from "./formAction";
+// import { handleActionForm } from "./formAction";
 import { toast } from "sonner";
-import { handleServerFormAction } from "./action.server";
 
 type Props = { title?: string; className?: string; service: string };
 export type TypeActionState = {
@@ -18,34 +17,47 @@ function FormGetUserData({
   service,
 }: Props) {
   const initial: TypeActionState = { success: false, message: "" };
+  const hadleSubmit = async (
+    prevState: TypeActionState,
+    formData: FormData,
+  ) => {
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify({
+          email: formData.get("email"),
+          name: formData.get("name"),
+          phone: formData.get("phone"),
+          service,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
 
-  const [state, formAction, pending] = useActionState(
-    (prevState: TypeActionState, formData: FormData) =>
-      handleServerFormAction(prevState, formData, service),
-    initial,
-  );
+      if (data.success) {
+        return { success: true, message: "Запит відправлено успішно!" };
+      } else {
+        return { success: false, message: "Помилка при надсиланні." };
+      }
+    } catch (error) {
+      return {
+        success: false,
+        message: "Помилка мережі або сервера. Спробуйте ще раз.",
+      };
+    }
+  };
+  const [state, formAction, pending] = useActionState(hadleSubmit, initial);
 
   useEffect(() => {
-    if (state.success) {
-      toast.success(state.message);
+    if (state.message) {
+      state.success ? toast.success(state.message) : toast.error(state.message);
     }
   }, [state]);
 
-  const hndleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const response = await fetch("/api/send", {
-      method: "POST",
-      body: JSON.stringify({
-        email: e.currentTarget.email.value,
-      }),
-    });
-  };
   return (
-    <form
-      className={cn("mt-7", className)}
-      //   onSubmit={hndleSubmit}
-      action={formAction}
-    >
+    <form className={cn("mt-7", className)} action={formAction}>
       <h2 className="text-main_blue textH4 mb-2 text-center uppercase">
         {title}
       </h2>
