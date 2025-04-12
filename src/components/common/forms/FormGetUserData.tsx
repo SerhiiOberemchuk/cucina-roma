@@ -39,7 +39,7 @@ function FormGetUserData({
       if (data.success) {
         return { success: true, message: "Запит відправлено успішно!" };
       } else {
-        return { success: false, message: "Помилка при надсиланні." };
+        return { success: false, message: "Помилка при надсиланні!" };
       }
     } catch (error) {
       console.error("Error:", error);
