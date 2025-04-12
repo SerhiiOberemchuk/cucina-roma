@@ -16,6 +16,7 @@
   --color-grey_logo_shadow_2: #bdbdbd;
   --color-logo_shadow: #d0d0d0;
   --color-grey_stroke_logo: #5f5f5f;
+  --color-error: #e90206;
 }
 
 @theme inline {
@@ -34,7 +35,7 @@
   --color-grey_logo_shadow_2: var(--color-grey_logo_shadow_2);
   --color-logo_shadow: var(--color-logo_shadow);
   --color-grey_stroke_logo: var(--color-grey_stroke_logo);
-
+  --color-error: var(--color-error);
   --font-sans: var(--font-cormorant_garamond);
   --font-mono: var(--font-IBM_plex_serif);
 }
@@ -121,6 +122,15 @@ body {
   line-height: 150%;
   font-weight: 500;
   font-style: normal;
+}
+
+.helper_text {
+  color: var(--color-text);
+  line-height: 150%;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: var(--font-IBM_plex_serif);
+  letter-spacing: 0;
 }
 .swiper {
   position: initial !important;

@@ -3,31 +3,37 @@
 import React, { useActionState, useEffect } from "react";
 import ButtonYelow from "../ButtonYelow";
 import { cn } from "@/utils/cn";
-// import { handleActionForm } from "./formAction";
 import { toast } from "sonner";
+import IconError from "@/assets/icons/icon_error.svg";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { div } from "framer-motion/client";
 
 type Props = { title?: string; className?: string; service: string };
-export type TypeActionState = {
-  success: boolean;
-  message: string;
+
+type FormDataInputs = {
+  email: string;
+  name: string;
+  phone: string;
 };
+
 function FormGetUserData({
   title = "Заповни заявку на майстер-клас",
   className,
   service,
 }: Props) {
-  const initial: TypeActionState = { success: false, message: "" };
-  const hadleSubmit = async (
-    prevState: TypeActionState,
-    formData: FormData,
-  ) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm<FormDataInputs>();
+
+  const onSubmit: SubmitHandler<FormDataInputs> = async (dataUser) => {
     try {
       const response = await fetch("/api/send", {
         method: "POST",
         body: JSON.stringify({
-          email: formData.get("email"),
-          name: formData.get("name"),
-          phone: formData.get("phone"),
+          ...dataUser,
           service,
         }),
         headers: {
@@ -37,42 +43,63 @@ function FormGetUserData({
       const data = await response.json();
 
       if (data.success) {
-        return { success: true, message: "Запит відправлено успішно!" };
+        toast.success("Запит відправлено успішно!");
       } else {
-        return { success: false, message: "Помилка при надсиланні!" };
+        toast.error("Помилка при надсиланні!");
       }
     } catch (error) {
       console.error("Error:", error);
-      return {
-        success: false,
-        message: "Помилка мережі або сервера. Спробуйте ще раз.",
-      };
+      toast.error("Помилка мережі або сервера. Спробуйте ще раз.");
     }
   };
-  const [state, formAction, pending] = useActionState(hadleSubmit, initial);
-
-  useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast.success(state.message);
-      } else {
-        toast.error(state.message);
-      }
-    }
-  }, [state]);
 
   return (
-    <form className={cn("mt-7", className)} action={formAction}>
+    <form
+      className={cn("mt-7", className)}
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+    >
       <h2 className="text-main_blue textH4 mb-2 text-center uppercase">
         {title}
       </h2>
       <ul className="mb-2 flex w-full flex-col gap-2">
-        {["email", "phone", "name"].map((field) => {
+        {(["email", "phone", "name"] as const).map((field) => {
           return (
             <li key={field}>
-              <label htmlFor={field}></label>
+              <label htmlFor={field} className="sr-only">
+                {field}
+              </label>
               <input
-                className="border-grey_stroke_logo placeholder:text-text w-full rounded-3xl border px-6 py-3"
+                {...register(field, {
+                  required: "Це поле обов'язкове",
+                  ...(field === "email" && {
+                    pattern: {
+                      value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                      message: "Невірний email формат",
+                    },
+                  }),
+                  ...(field === "name" && {
+                    minLength: {
+                      value: 2,
+                      message: "Ім'я повинно містити щонайменше 2 символи",
+                    },
+                    maxLength: {
+                      value: 20,
+                      message: "Ім'я повинно містити не більше 20 символів",
+                    },
+                  }),
+                  ...(field === "phone" && {
+                    minLength: {
+                      value: 10,
+                      message:
+                        "Номер телефону повинен містити щонайменше 10 цифр",
+                    },
+                  }),
+                })}
+                className={cn(
+                  "border-grey_stroke_logo placeholder:text-text w-full rounded-3xl border px-6 py-3",
+                  errors[field] && "border-error border-2",
+                )}
                 type={
                   field === "phone"
                     ? "tel"
@@ -82,7 +109,6 @@ function FormGetUserData({
                 }
                 id={field}
                 name={field}
-                required={field === "email" ? false : true}
                 placeholder={
                   field === "phone"
                     ? "Телефон"
@@ -91,14 +117,22 @@ function FormGetUserData({
                       : "Ім`я"
                 }
               />
+              {errors[field] && (
+                <div className="flex items-center gap-2">
+                  <IconError className="h-5 w-5" />
+                  <span role="alert" className="helper_text">
+                    {errors[field].message}
+                  </span>
+                </div>
+              )}
             </li>
           );
         })}
       </ul>
       <div className="flex justify-end">
         <ButtonYelow
-          title={pending ? "Обробляємо..." : "Замовити"}
-          disabled={pending}
+          title={isSubmitting ? "Обробляємо..." : "Замовити"}
+          disabled={isSubmitting}
           className="md:max-w-fit"
           type="submit"
         />

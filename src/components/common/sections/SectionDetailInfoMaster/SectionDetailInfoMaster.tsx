@@ -19,9 +19,9 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
   )[0];
 
   return (
-    <section className="py-10 xl:py-20">
+    <section className="py-6">
       <Container className="relative">
-        <WhatsAppLink place="hero_section" />
+        <WhatsAppLink place="hero_section" className="-top-1" />
         <SubtitlePoint text={subtitle} />
         <div className="mt-6 md:mt-10 xl:flex xl:justify-between">
           <Image
