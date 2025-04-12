@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useActionState, useEffect } from "react";
 import ButtonYelow from "../ButtonYelow";
 import { cn } from "@/utils/cn";
 import { toast } from "sonner";
 import IconError from "@/assets/icons/icon_error.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { div } from "framer-motion/client";
 
 type Props = { title?: string; className?: string; service: string };
 
@@ -24,7 +22,6 @@ function FormGetUserData({
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormDataInputs>();
 
