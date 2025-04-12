@@ -5,6 +5,7 @@ import ButtonYelow from "../ButtonYelow";
 import { cn } from "@/utils/cn";
 import { handleActionForm } from "./formAction";
 import { toast } from "sonner";
+import { handleServerFormAction } from "./action.server";
 
 type Props = { title?: string; className?: string; service: string };
 export type TypeActionState = {
@@ -20,7 +21,7 @@ function FormGetUserData({
 
   const [state, formAction, pending] = useActionState(
     (prevState: TypeActionState, formData: FormData) =>
-      handleActionForm(prevState, formData, service),
+      handleServerFormAction(prevState, formData, service),
     initial,
   );
 
@@ -30,8 +31,21 @@ function FormGetUserData({
     }
   }, [state]);
 
+  const hndleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify({
+        email: e.currentTarget.email.value,
+      }),
+    });
+  };
   return (
-    <form className={cn("mt-7", className)} action={formAction}>
+    <form
+      className={cn("mt-7", className)}
+      //   onSubmit={hndleSubmit}
+      action={formAction}
+    >
       <h2 className="text-main_blue textH4 mb-2 text-center uppercase">
         {title}
       </h2>

@@ -1,4 +1,3 @@
-"use server";
 export const runtime = "nodejs";
 import { transporter } from "@/utils/email";
 import { TypeActionState } from "./FormGetUserData";
