@@ -8,7 +8,8 @@ import IconTime from "@/assets/icons/icon_time.svg";
 import IconLoction from "@/assets/icons/icon_location.svg";
 import { DataCardMaster, dataMaster } from "@/data/dataMaster";
 import TextBody from "../../TextBody";
-import ButtonBuyMaster from "./ButtonBuyMaster";
+// import ButtonBuyMaster from "./ButtonBuyMaster";
+import FormGetUserData from "../../forms/FormGetUserData";
 
 function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
   const { subtitle, imageUrl, title, location, describe } =
@@ -54,15 +55,11 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
                   У вартість входить келих Prosecco!
                 </p>
               </li>
-              <li className="flex md:justify-end">
-                {/* <LinkYelow
-                  href=""
-                  linkTitle="Замовити"
-                  className="text-center md:w-fit"
-                /> */}
+              {/* <li className="flex md:justify-end">
                 <ButtonBuyMaster page={page} />
-              </li>
+              </li> */}
             </ul>
+            <FormGetUserData className="mt-0" service={title} />
           </div>
         </div>
       </Container>

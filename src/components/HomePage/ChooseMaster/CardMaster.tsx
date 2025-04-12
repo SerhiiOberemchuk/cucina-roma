@@ -1,7 +1,7 @@
 import Image from "next/image";
 import IconTime from "../../../assets/icons/icon_time.svg";
 import IconPrice from "../../../assets/icons/icon_price.svg";
-import LinkYelow from "@/components/common/LinkYelow";
+import LinkYelow from "@/components/common/Links/LinkYelow";
 import { DataCardMaster } from "../../../data/dataMaster";
 
 function CardMaster({

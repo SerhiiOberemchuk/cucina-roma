@@ -3,9 +3,9 @@ import SubtitlePoint from "../../SubtitlePoint";
 import Image from "next/image";
 import TitleSection from "../../TitleSection";
 import TextBody from "../../TextBody";
-import ButtonYelow from "../../ButtonYelow";
+import FormGetUserData from "../../forms/FormGetUserData";
 
-function SectionPayCard() {
+function SectionCertificate() {
   return (
     <section className="bg-blue py-10 xl:py-20">
       <Container>
@@ -51,14 +51,11 @@ function SectionPayCard() {
                   та щирі усмішки!
                 </TextBody>
               </li>
-              <li className="flex md:justify-end">
-                <ButtonYelow
-                  // onClick={() => {}}
-                  title="Тут колись щось буде"
-                  className="w-fit"
-                />
-              </li>
             </ul>
+            <FormGetUserData
+              title="Оформи замовлення"
+              service="Замовлення сертифікату"
+            />
           </div>
         </div>
       </Container>
@@ -66,4 +63,4 @@ function SectionPayCard() {
   );
 }
 
-export default SectionPayCard;
+export default SectionCertificate;

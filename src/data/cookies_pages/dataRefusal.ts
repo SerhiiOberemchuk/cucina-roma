@@ -1,4 +1,4 @@
-import { DataCookiesPagesProps } from "@/app/types/types";
+import { DataCookiesPagesProps } from "@/types/types";
 
 export const dataRefusal: DataCookiesPagesProps = {
   page: "refusal",

@@ -3,7 +3,7 @@
 import { cn } from "@/utils/cn";
 import { useEffect, useState } from "react";
 import NavMenu from "./common/NavMenu";
-import BookingLink from "./common/BookingLink";
+import BookingLink from "./common/Links/BookingLink";
 import { motion, AnimatePresence } from "framer-motion";
 
 function MobileMenu() {

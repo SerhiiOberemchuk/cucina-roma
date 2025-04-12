@@ -1,5 +1,5 @@
 import SectionInstagram from "@/components/common/sections/SectionInstagram";
-import SectionPayCard from "@/components/common/sections/SectionPayCard/SectionPayCard";
+import SectionPayCard from "@/components/common/sections/SectionPayCard/SectionCertificate";
 import AboutUsSection from "@/components/HomePage/AboutUsSection/AboutUsSection";
 import ChooseMaster from "@/components/HomePage/ChooseMaster/ChooseMaster";
 import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
