@@ -53,7 +53,11 @@ function FormGetUserData({
 
   useEffect(() => {
     if (state.message) {
-      state.success ? toast.success(state.message) : toast.error(state.message);
+      if (state.success) {
+        toast.success(state.message);
+      } else {
+        toast.error(state.message);
+      }
     }
   }, [state]);
 
