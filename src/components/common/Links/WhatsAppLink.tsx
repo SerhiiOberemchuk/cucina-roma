@@ -1,3 +1,4 @@
+import WhatsUpIcon1 from "@/assets/icons/whatsapp1.svg";
 import WhatsUpIcon from "@/assets/icons/whatsapp.svg";
 import { cn } from "@/utils/cn";
 
@@ -17,14 +18,11 @@ function WhatsAppLink({ place, className }: Props) {
         className,
       )}
     >
-      <WhatsUpIcon
-        className={cn(
-          "hover:fill-hover active:fill-pressed transition-all duration-500",
-          place === "hero_section"
-            ? "fill-whatsup h-12 w-12"
-            : "fill-yellow_main h-6 w-6",
-        )}
-      />
+      {place === "hero_section" ? (
+        <WhatsUpIcon1 className="h-12 w-12" />
+      ) : (
+        <WhatsUpIcon className="hover:fill-hover active:fill-pressed fill-yellow_main h-6 w-6 transition-all duration-500" />
+      )}
     </a>
   );
 }

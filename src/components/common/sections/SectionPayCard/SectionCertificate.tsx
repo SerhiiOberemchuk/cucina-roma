@@ -10,10 +10,10 @@ function SectionCertificate() {
   return (
     <section className="bg-blue py-10 xl:py-20">
       <Container>
-        <SubtitlePoint text="подаруй враження" />
-        <div className="xl:flex xl:items-center xl:justify-between">
+        <SubtitlePoint text="подаруй враження" className="mb-6" />
+        <div className="xl:flex xl:items-start xl:justify-between">
           <Image
-            className="hidden md:block"
+            className="top-0 mb-20 hidden md:block xl:sticky xl:mb-0"
             src={"/images/pay_card.png"}
             width={588}
             height={500}
