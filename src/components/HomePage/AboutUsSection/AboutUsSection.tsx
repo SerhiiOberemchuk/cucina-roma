@@ -18,7 +18,7 @@ function AboutUsSection() {
               Вітаємо! Мрієте про подорож до Рима? Ми — україномовний
               туристичний проєкт, який допоможе вам відкрити Італію.
             </TextBody>
-            <ul className="flex w-full max-w-[430px] flex-col gap-3">
+            <ul className="flex w-full flex-col gap-3 xl:max-w-[430px]">
               <li>
                 <TextBodyPoint>
                   Авторські екскурсії античним Римом. Ватикан.  Індивідуальні

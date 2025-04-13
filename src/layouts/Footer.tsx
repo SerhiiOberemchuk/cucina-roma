@@ -20,11 +20,11 @@ function Footer() {
           <div className="flex flex-col gap-4 md:gap-6">
             <p className="btn_text text-white">Підпишись</p>
             <ul className="flex items-center gap-4 md:justify-around md:gap-0">
-              <li className="h-8">
+              <li className="h-8 w-8">
                 <WhatsAppLink place="footer" />
               </li>
-              <li className="h-8">
-                <InstagramLink />
+              <li className="h-8 w-8">
+                <InstagramLink className="" />
               </li>
             </ul>
           </div>

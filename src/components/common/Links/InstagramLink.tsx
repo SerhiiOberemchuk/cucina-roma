@@ -1,4 +1,5 @@
 import InstagramIcon from "@/assets/icons/instagram.svg";
+import { LINK_INSTAGRAM } from "@/data/linkInstagram";
 import { cn } from "@/utils/cn";
 type Props = { isIcon?: boolean; className?: string };
 function InstagramLink({ isIcon = true, className }: Props) {
@@ -7,14 +8,14 @@ function InstagramLink({ isIcon = true, className }: Props) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Посилання на сторінку інстаграм"
-      href="https://www.instagram.com/guide_transfer_roma?igsh=eGNhZjg4NThhNXRl&utm_source=qr"
+      href={LINK_INSTAGRAM}
       className={cn(
         "btn_text text-main_blue hover:text-hover inline-flex h-fit w-fit items-center justify-center transition-all duration-300",
         className,
       )}
     >
       {isIcon ? (
-        <InstagramIcon className="fill-yellow_main stroke-main_blue hover:fill-hover active:fill-pressed transition-all duration-500" />
+        <InstagramIcon className="fill-yellow_main stroke-main_blue hover:fill-hover active:fill-pressed h-8 w-8 transition-all duration-500" />
       ) : (
         "@guide_transfer_roma"
       )}
