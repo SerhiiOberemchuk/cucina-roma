@@ -19,7 +19,7 @@ function AboutUsSection() {
               туристичний проєкт, який допоможе вам відкрити Італію.
             </TextBody>
             <ul className="flex w-full flex-col gap-3 xl:max-w-[430px]">
-              <li>
+              <li className="max-w-[430px]">
                 <TextBodyPoint>
                   Авторські екскурсії античним Римом. Ватикан.  Індивідуальні
                   екскурсії  за межі Риму
