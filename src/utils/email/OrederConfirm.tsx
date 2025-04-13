@@ -10,11 +10,13 @@ export const OrderConfirmation = ({
   orderId,
   service,
   imageUrl,
+  prise,
 }: {
   name: string;
   orderId: string;
   service: string;
   imageUrl?: string;
+  prise?: number;
 }) => (
   <Html lang="uk">
     <Head />
@@ -40,7 +42,7 @@ export const OrderConfirmation = ({
           <strong>Ваше замовлення: №{orderId}</strong>
         </Text>
         <Text>
-          До сплати: <strong>80€</strong>
+          До сплати: <strong>{prise}€</strong>
         </Text>
         <Text>
           Метод оплати: <strong>карткою</strong>

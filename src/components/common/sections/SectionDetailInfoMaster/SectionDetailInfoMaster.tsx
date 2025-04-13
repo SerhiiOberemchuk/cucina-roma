@@ -54,13 +54,11 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
                   У вартість входить келих Prosecco!
                 </p>
               </li>
-              {/* <li className="flex md:justify-end">
-                <ButtonBuyMaster page={page} />
-              </li> */}
             </ul>
             <FormGetUserData
               className="mt-0"
               service={title}
+              prise={prise}
               imageUrl={imageUrl}
             />
           </div>

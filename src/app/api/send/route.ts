@@ -8,12 +8,12 @@ const { API_BASE_EMAIL } = process.env;
 
 export async function POST(req: Request) {
   const body = await req.json();
-  const { name, phone, email, service, imageUrl } = body;
+  const { name, phone, email, service, imageUrl, prise } = body;
   const now = new Date();
   const orderId = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}/${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
 
   const clientHtml = await render(
-    OrderConfirmation({ name, service, orderId, imageUrl }),
+    OrderConfirmation({ name, service, orderId, imageUrl, prise }),
   );
   const adminHtml = await render(
     AdminNotification({ name, phone, email, service, orderId }),

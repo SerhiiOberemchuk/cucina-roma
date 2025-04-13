@@ -11,6 +11,7 @@ type Props = {
   className?: string;
   service: string;
   imageUrl?: string;
+  prise?: number;
 };
 
 type FormDataInputs = {
@@ -24,6 +25,7 @@ function FormGetUserData({
   className,
   service,
   imageUrl,
+  prise,
 }: Props) {
   const {
     register,
@@ -39,6 +41,7 @@ function FormGetUserData({
           ...dataUser,
           service,
           imageUrl,
+          prise,
         }),
         headers: {
           "Content-Type": "application/json",

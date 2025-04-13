@@ -4,6 +4,7 @@ import Image from "next/image";
 import TitleSection from "../../TitleSection";
 import TextBody from "../../TextBody";
 import FormGetUserData from "../../forms/FormGetUserData";
+import { priseCertificate } from "@/data/priseCertificate";
 
 function SectionCertificate() {
   return (
@@ -53,7 +54,8 @@ function SectionCertificate() {
               </li>
             </ul>
             <FormGetUserData
-              imageUrl="/images/pay_card.png"
+              prise={priseCertificate}
+              imageUrl="/images/modal_certificato.jpg"
               title="Оформи замовлення"
               service="Замовлення сертифікату"
             />
