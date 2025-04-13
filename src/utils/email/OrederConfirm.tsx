@@ -9,10 +9,12 @@ export const OrderConfirmation = ({
   name,
   orderId,
   service,
+  imageUrl,
 }: {
   name: string;
   orderId: string;
   service: string;
+  imageUrl?: string;
 }) => (
   <Html lang="uk">
     <Head />
@@ -65,10 +67,7 @@ export const OrderConfirmation = ({
           тижні до бажаної дати і часу.
         </Text>
         <Text>Деталі замовлення: №{orderId}</Text>
-        <Img
-          src="https://www.cucinaroma.com.ua/images/About360.jpg"
-          width="100%"
-        />
+        <Img src={`https://www.cucinaroma.com.ua${imageUrl}`} width="100%" />
         <Text>
           <strong>Майстер-клас: {service}</strong>
         </Text>

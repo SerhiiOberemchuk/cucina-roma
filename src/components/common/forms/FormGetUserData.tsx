@@ -6,7 +6,12 @@ import { toast } from "sonner";
 import IconError from "@/assets/icons/icon_error.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-type Props = { title?: string; className?: string; service: string };
+type Props = {
+  title?: string;
+  className?: string;
+  service: string;
+  imageUrl?: string;
+};
 
 type FormDataInputs = {
   email: string;
@@ -18,6 +23,7 @@ function FormGetUserData({
   title = "Заповни заявку на майстер-клас",
   className,
   service,
+  imageUrl,
 }: Props) {
   const {
     register,
@@ -32,6 +38,7 @@ function FormGetUserData({
         body: JSON.stringify({
           ...dataUser,
           service,
+          imageUrl,
         }),
         headers: {
           "Content-Type": "application/json",

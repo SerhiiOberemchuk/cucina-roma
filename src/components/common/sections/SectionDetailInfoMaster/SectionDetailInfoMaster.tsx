@@ -8,7 +8,6 @@ import IconTime from "@/assets/icons/icon_time.svg";
 import IconLoction from "@/assets/icons/icon_location.svg";
 import { DataCardMaster, dataMaster } from "@/data/dataMaster";
 import TextBody from "../../TextBody";
-// import ButtonBuyMaster from "./ButtonBuyMaster";
 import FormGetUserData from "../../forms/FormGetUserData";
 
 function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
@@ -21,7 +20,7 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
   return (
     <section className="py-6">
       <Container className="relative">
-        <WhatsAppLink place="hero_section" className="-top-1" />
+        <WhatsAppLink place="hero_section" className="-top-1 md:-top-1" />
         <SubtitlePoint text={subtitle} />
         <div className="mt-6 md:mt-10 xl:flex xl:justify-between">
           <Image
@@ -59,7 +58,11 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
                 <ButtonBuyMaster page={page} />
               </li> */}
             </ul>
-            <FormGetUserData className="mt-0" service={title} />
+            <FormGetUserData
+              className="mt-0"
+              service={title}
+              imageUrl={imageUrl}
+            />
           </div>
         </div>
       </Container>

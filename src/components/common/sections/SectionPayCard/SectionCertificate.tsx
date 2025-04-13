@@ -53,6 +53,7 @@ function SectionCertificate() {
               </li>
             </ul>
             <FormGetUserData
+              imageUrl="/images/pay_card.png"
               title="Оформи замовлення"
               service="Замовлення сертифікату"
             />
