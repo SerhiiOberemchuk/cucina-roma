@@ -1,4 +1,4 @@
-import SectionInstagram from "@/components/common/sections/SectionInstagram";
+import SectionInstagram from "@/components/common/sections/SectionInstagram/SectionInstagram";
 
 type Props = { children: React.ReactNode };
 

@@ -6,6 +6,7 @@ import Footer from "@/layouts/Footer";
 import Cookies from "@/components/Cookies";
 import SEOJsonLd from "@/utils/SEOJsonLd";
 import { Toaster } from "sonner";
+import ButtonScrollToTop from "@/components/ButtonScrollToTop";
 
 const cormorantGaramond = Cormorant_Garamond({
   weight: ["400", "500", "600"],
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Footer />
         <Cookies />
         <Toaster richColors />
+        <ButtonScrollToTop />
       </body>
     </html>
   );

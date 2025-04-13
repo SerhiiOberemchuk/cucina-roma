@@ -13,8 +13,14 @@ function CardMaster({
   linkTitle,
 }: DataCardMaster) {
   return (
-    <div className="flex max-w-[334px] flex-col gap-4">
-      <Image src={src} width={334} height={360} alt={name} className="" />
+    <div className="flex flex-col gap-4">
+      <Image
+        src={src}
+        width={734}
+        height={760}
+        alt={name}
+        className="object-cover"
+      />
       <h3 className="textH3 text-text">{name}</h3>
       <ul>
         <li className="mb-1 flex items-center gap-2">

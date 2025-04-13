@@ -104,7 +104,7 @@ function FormGetUserData({
                   }),
                 })}
                 className={cn(
-                  "border-grey_stroke_logo placeholder:text-text w-full rounded-3xl border px-6 py-3",
+                  "border-grey_stroke_logo placeholder:text-text w-full rounded-3xl border px-6 py-[11px]",
                   errors[field] && "border-error border-2",
                 )}
                 type={
@@ -140,7 +140,7 @@ function FormGetUserData({
         <ButtonYelow
           title={isSubmitting ? "Обробляємо..." : "Замовити"}
           disabled={isSubmitting}
-          className="md:max-w-fit"
+          className="py-3 md:max-w-fit"
           type="submit"
         />
       </div>

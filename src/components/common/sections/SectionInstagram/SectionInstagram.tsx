@@ -1,6 +1,6 @@
-import Container from "../Container";
-import TitleSection from "../TitleSection";
-import InstagramLink from "../Links/InstagramLink";
+import Container from "../../Container";
+import TitleSection from "../../TitleSection";
+import InstagramLink from "../../Links/InstagramLink";
 import Image from "next/image";
 
 function SectionInstagram() {
@@ -13,8 +13,8 @@ function SectionInstagram() {
           <li className="relative w-fit">
             <Image
               src={"/images/Instagram_1.jpg"}
-              width={388}
-              height={460}
+              width={488}
+              height={560}
               className="rounded-3xl"
               alt="Зображення із інстаграм"
             />

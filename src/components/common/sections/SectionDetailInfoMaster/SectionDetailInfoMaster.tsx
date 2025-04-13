@@ -28,7 +28,7 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
             alt={subtitle}
             width={588}
             height={588}
-            className="mx-auto h-[400px] w-[328px] rounded-3xl object-cover md:h-[588px] md:w-[688px] xl:mx-0 xl:w-[588px]"
+            className="mx-auto rounded-3xl object-cover md:h-[588px] md:w-[688px] xl:mx-0 xl:w-[588px]"
           />
           <div className="mt-6 flex flex-col justify-center gap-6 xl:mt-0 xl:max-w-[488px]">
             <h3 className="textH3 text-text">{title}</h3>
