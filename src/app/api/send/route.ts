@@ -1,4 +1,7 @@
-import { transporter } from "@/utils/email";
+import { AdminNotification } from "@/utils/email/AdminNotification";
+import { transporter } from "@/utils/email/email";
+import { OrderConfirmation } from "@/utils/email/OrederConfirm";
+import { render } from "@react-email/render";
 import { NextResponse } from "next/server";
 
 const { API_BASE_EMAIL } = process.env;
@@ -6,6 +9,15 @@ const { API_BASE_EMAIL } = process.env;
 export async function POST(req: Request) {
   const body = await req.json();
   const { name, phone, email, service } = body;
+  const now = new Date();
+  const orderId = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}/${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
+
+  const clientHtml = await render(
+    OrderConfirmation({ name, service, orderId }),
+  );
+  const adminHtml = await render(
+    AdminNotification({ name, phone, email, service, orderId }),
+  );
   try {
     if (!API_BASE_EMAIL) {
       return NextResponse.json(
@@ -18,15 +30,15 @@ export async function POST(req: Request) {
         from: API_BASE_EMAIL,
         to: email,
         subject: "Підтвердження запиту",
-        text: `Дякуємо за ваш запит, ${name ?? "клієнт"}! Ми з вами зв’яжемося найближчим часом.`,
+        html: clientHtml,
       });
     }
     await transporter.sendMail({
       from: email || "",
       to: API_BASE_EMAIL,
-      subject: "Клієнт зробив замовлення",
+      subject: `Нове замовлення № ${orderId}`,
       priority: "high",
-      text: `Дані клієнта: ім'я: ${name || "___"}, номер телефону: ${phone || "___"}, email: ${email || "клієнт не залишив електронну адресу"}, сторінка на якій залишили замовлення: ${service}`,
+      html: adminHtml,
     });
 
     return NextResponse.json(

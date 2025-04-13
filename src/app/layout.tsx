@@ -3,7 +3,6 @@ import { Cormorant_Garamond, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
-// import ModalWindow from "@/components/ModalWindow/ModalWindow";
 import Cookies from "@/components/Cookies";
 import SEOJsonLd from "@/utils/SEOJsonLd";
 import { Toaster } from "sonner";
@@ -69,7 +68,6 @@ export default function RootLayout({
         <SEOJsonLd />
         <main>{children}</main>
         <Footer />
-        {/* <ModalWindow /> */}
         <Cookies />
         <Toaster richColors />
       </body>
