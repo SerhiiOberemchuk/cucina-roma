@@ -63,11 +63,11 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body
-        className={`${cormorantGaramond.variable} ${ibmPlexSerif.variable} antialiased`}
+        className={`${cormorantGaramond.variable} ${ibmPlexSerif.variable} flex min-h-screen flex-col antialiased`}
       >
         <Header />
         <SEOJsonLd />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <Cookies />
         <Toaster richColors />

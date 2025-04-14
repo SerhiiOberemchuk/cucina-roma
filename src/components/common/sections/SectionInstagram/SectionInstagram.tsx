@@ -23,8 +23,8 @@ function SectionInstagram() {
           <li className="relative hidden w-fit md:block">
             <Image
               src={"/images/Instagram_2.jpg"}
-              width={388}
-              height={460}
+              width={488}
+              height={560}
               className="rounded-3xl"
               alt="Зображення із інстаграм"
             />
@@ -33,8 +33,8 @@ function SectionInstagram() {
           <li className="relative hidden w-fit xl:block">
             <Image
               src={"/images/Instagram_3.jpg"}
-              width={388}
-              height={460}
+              width={488}
+              height={560}
               className="rounded-3xl"
               alt="Зображення із інстаграм"
             />

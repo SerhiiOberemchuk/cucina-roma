@@ -51,7 +51,7 @@ export const dataInfo: DataCookiesPagesProps = {
     {
       itemTitle: "8. Контактна інформація",
       description: [
-        "Якщо у вас є питання щодо цієї юридичної інформації, звертайтеся до нас за адресою: info@cucinaroma.com.ua.",
+        "Якщо у вас є питання щодо цієї юридичної інформації, звертайтеся до нас за адресою: guide.transfer.roma@gmail.com ",
       ],
     },
   ],

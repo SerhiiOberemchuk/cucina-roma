@@ -13,17 +13,17 @@ function SectionCertificate() {
         <SubtitlePoint text="подаруй враження" className="mb-6" />
         <div className="xl:flex xl:items-start xl:justify-between">
           <Image
-            className="top-0 mb-20 hidden md:block xl:sticky xl:mb-0"
+            className="top-0 mb-20 hidden md:block xl:sticky xl:mb-0 xl:max-w-[588px]"
             src={"/images/pay_card.png"}
-            width={588}
-            height={500}
+            width={888}
+            height={600}
             alt="Подарунковий сертифікат"
           />
           <Image
             className="mx-auto mb-20 md:hidden"
             src={"/images/pay_card_mobile.png"}
-            width={328}
-            height={278}
+            width={728}
+            height={478}
             alt="Подарунковий сертифікат"
           />
           <div className="xl:max-w-[488px]">
