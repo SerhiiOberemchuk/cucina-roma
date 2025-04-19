@@ -11,7 +11,7 @@ function HeroSection() {
           place="hero_section"
           className="z-[5] xl:top-2 xl:right-32"
         />
-        <div className="pointer-events-none absolute bottom-[46px] left-3 z-10 ml-4 max-w-[80%] md:right-20 md:bottom-[90px] md:left-auto md:max-w-[474px] xl:right-40">
+        <div className="pointer-events-none absolute bottom-[46px] left-3 z-10 ml-4 max-w-[80%] md:right-20 md:bottom-[40px] md:left-auto md:max-w-[474px] xl:right-40">
           <h1 className="textH1 text-white">
             Твій гід <br className="md:hidden" /> у Римі
           </h1>

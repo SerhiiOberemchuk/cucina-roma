@@ -19,7 +19,7 @@ function WhatsAppLink({ place, className }: Props) {
       )}
     >
       {place === "hero_section" ? (
-        <WhatsUpIcon1 className="h-12 w-12" />
+        <WhatsUpIcon1 className="h-12 w-12 transition-all duration-300 hover:scale-[1.05]" />
       ) : (
         <WhatsUpIcon className="hover:fill-hover active:fill-pressed fill-yellow_main h-8 w-8 transition-all duration-500" />
       )}
