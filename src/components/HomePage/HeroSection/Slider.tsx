@@ -59,15 +59,18 @@ export default function HeroSlider() {
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         modules={[EffectFade, Pagination, Autoplay]}
-        className="mySwiper h-[680px] md:h-[800px]"
+        className="mySwiper h-[680px] md:max-h-[80vh]"
       >
         {currentImages.map((src, index) => (
-          <SwiperSlide key={index} className="h-[680px] w-full md:h-[800px]">
+          <SwiperSlide
+            key={index}
+            // className="h-[680px] w-full md:h-[800px]"
+          >
             <Image
               src={src}
               alt={`Slide ${index + 1}`}
               fill
-              className="rounded-4xl object-cover"
+              className="max-h-[100vh] rounded-4xl object-cover"
               sizes="(max-width: 480px) 100vw, (max-width: 1024px) 100vw, 100vw"
               priority={index === 0}
             />
