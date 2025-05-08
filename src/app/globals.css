@@ -22,6 +22,7 @@
 @theme inline {
   /* --color-background: var(--background);
   --color-foreground: var(--foreground); */
+  --breakpoint-1xl: 90rem;
   --color-yellow_main: var(--color-yellow_main);
   --color-pressed: var(--color-pressed);
   --color-hover: var(--color-hover);

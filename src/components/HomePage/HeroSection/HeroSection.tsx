@@ -15,8 +15,9 @@ function HeroSection() {
           <h1 className="textH1 text-white">
             Твій гід <br className="md:hidden" /> у Римі
           </h1>
-          <p className="big_text mt-4 text-white md:max-w-[390px]">
-            Кулінарні майстер-класи у Римі з україномовним гідом
+          <p className="big_text mt-4 text-white">
+            Перші кулінарні майстер-класи в Римі <br /> з україномовним
+            супроводом
           </p>
         </div>
       </Container>

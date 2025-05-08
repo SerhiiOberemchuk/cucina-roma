@@ -45,7 +45,7 @@ export default function HeroSlider() {
       else setDevice("desktop");
     };
 
-    handleResize(); // початковий запуск
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -62,10 +62,7 @@ export default function HeroSlider() {
         className="mySwiper h-[680px] md:max-h-[80vh]"
       >
         {currentImages.map((src, index) => (
-          <SwiperSlide
-            key={index}
-            // className="h-[680px] w-full md:h-[800px]"
-          >
+          <SwiperSlide key={index}>
             <Image
               src={src}
               alt={`Slide ${index + 1}`}
@@ -76,7 +73,7 @@ export default function HeroSlider() {
             />
           </SwiperSlide>
         ))}
-      </Swiper>{" "}
+      </Swiper>
     </div>
   );
 }

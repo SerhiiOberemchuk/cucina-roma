@@ -17,7 +17,7 @@ function InstagramLink({ isIcon = true, className }: Props) {
       {isIcon ? (
         <InstagramIcon className="fill-yellow_main stroke-main_blue hover:fill-hover active:fill-pressed h-8 w-8 transition-all duration-500" />
       ) : (
-        "@guide_transfer_roma"
+        "@guide_roma_transfer"
       )}
     </a>
   );

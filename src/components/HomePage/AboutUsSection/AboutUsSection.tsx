@@ -11,18 +11,28 @@ function AboutUsSection() {
       <Container>
         <SubtitlePoint text="україномовний туристичний проєкт" />
 
-        <div className="mt-6 xl:flex xl:flex-row-reverse xl:gap-[124px]">
-          <div className="xl:flex xl:max-w-[488px] xl:flex-col xl:justify-center">
+        <div className="1xl:gap-[124px] mt-6 xl:flex xl:flex-row-reverse xl:items-center xl:gap-[84px]">
+          <div className="xl:flex xl:max-w-[436px] xl:flex-col xl:justify-center">
             <TitleSection title="Про нас" className="mb-7" />
-            <TextBody className="mb-3">
-              Вітаємо! Мрієте про подорож до Рима? Ми — україномовний
-              туристичний проєкт, який допоможе вам відкрити Італію.
+            <TextBody className="mb-3 xl:max-w-[488px]">
+              Мене звати Альона, і я — засновниця туристичного проєкту для
+              українців, які мріють побачити справжній Рим. ( тут треба фотку
+              справа в кружечку ) 
+              <br /> <br /> З  командою ми створили унікальний простір, де вже
+              понад 3500 туристів відкрили для себе справжній Рим. <br /> І ваша
+              подорож до Вічного міста з нами стане не просто цікавою — вона
+              залишиться у серці назавжди.
             </TextBody>
-            <ul className="flex w-full flex-col gap-3 xl:max-w-[430px]">
+
+            <ul className="flex w-full flex-col gap-2 xl:max-w-[430px]">
               <li className="max-w-[430px]">
                 <TextBodyPoint>
-                  Авторські екскурсії античним Римом. Ватикан.  Індивідуальні
-                  екскурсії  за межі Риму
+                  16 авторських екскурсій у Римі та за його межами.
+                </TextBodyPoint>
+              </li>
+              <li>
+                <TextBodyPoint>
+                  Ватикан — з найкращими україномовними гідами.{" "}
                 </TextBodyPoint>
               </li>
               <li>
@@ -32,20 +42,16 @@ function AboutUsSection() {
               </li>
               <li>
                 <TextBodyPoint>
-                  Гастрономічні екскурсії для поціновувачів традиційної
-                  італійської кухні.
+                  Гастрономічні екскурсії для поціновувачів італійської кухні.
                 </TextBodyPoint>
               </li>
               <li>
                 <TextBodyPoint>
-                  Розробка індивідуальних програм для груп туристів, повне
-                  супроводження.
+                  Розробка індивідуальних  програм для груп з повним супроводом.
                 </TextBodyPoint>
               </li>
               <li>
-                <TextBodyPoint>
-                  Організація особливих подій у топових локаціях.
-                </TextBodyPoint>
+                <TextBodyPoint>Організація особливих подій.</TextBodyPoint>
               </li>
             </ul>
           </div>
@@ -64,8 +70,8 @@ function AboutUsSection() {
             alt="Про нас"
           />
           <Image
-            className="mx-auto hidden rounded-3xl xl:block"
-            src={"/images/About768.jpg"}
+            className="mx-auto hidden min-h-[580px] rounded-3xl object-cover xl:block"
+            src={"/images/About1440.jpg"}
             width={588}
             height={580}
             alt="Про нас"
