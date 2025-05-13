@@ -26,31 +26,31 @@ function AboutUsSection() {
             <ul className="flex w-full flex-col gap-2 xl:max-w-[430px]">
               <li className="max-w-[430px]">
                 <TextBodyPoint>
-                  16 авторських екскурсій у Римі та за його межами.
+                  16 авторських екскурсій у Римі та за його межами
                 </TextBodyPoint>
               </li>
               <li>
                 <TextBodyPoint>
-                  Ватикан — з найкращими україномовними гідами.{" "}
+                  Ватикан — з найкращими україномовними гідами
                 </TextBodyPoint>
               </li>
               <li>
                 <TextBodyPoint>
-                  Організація та комфортний трансфер.
+                  Організація та комфортний трансфер
                 </TextBodyPoint>
               </li>
               <li>
                 <TextBodyPoint>
-                  Гастрономічні екскурсії для поціновувачів італійської кухні.
+                  Гастрономічні екскурсії для поціновувачів італійської кухні
                 </TextBodyPoint>
               </li>
               <li>
                 <TextBodyPoint>
-                  Розробка індивідуальних  програм для груп з повним супроводом.
+                  Розробка індивідуальних  програм для груп з повним супроводом
                 </TextBodyPoint>
               </li>
               <li>
-                <TextBodyPoint>Організація особливих подій.</TextBodyPoint>
+                <TextBodyPoint>Організація особливих подій</TextBodyPoint>
               </li>
             </ul>
           </div>

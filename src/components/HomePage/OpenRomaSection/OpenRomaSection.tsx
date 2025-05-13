@@ -11,7 +11,7 @@ function OpenRomaSection() {
         />
         <h2 className="textH2 mx-auto max-w-[846px] text-center">
           Мрії про Рим та справжню італійську кухню стають реальністю.
-          Відкривайте Італію з душею разом з нами. 
+          Відкривайте Італію з душею разом з нами
         </h2>
       </Container>
     </section>
