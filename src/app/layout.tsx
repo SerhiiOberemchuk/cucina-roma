@@ -8,6 +8,7 @@ import SEOJsonLd from "@/utils/SEOJsonLd";
 import { Toaster } from "sonner";
 import ButtonScrollToTop from "@/components/ButtonScrollToTop";
 import { Analytics } from "@/components/Analytics";
+import VideoIntroduction from "@/components/VideoIntroduction";
 
 const cormorantGaramond = Cormorant_Garamond({
   weight: ["400", "500", "600"],
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Toaster richColors />
         <ButtonScrollToTop />
         <Analytics />
+        <VideoIntroduction />
       </body>
     </html>
   );
