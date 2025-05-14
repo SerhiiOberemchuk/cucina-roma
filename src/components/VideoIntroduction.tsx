@@ -23,10 +23,10 @@ function VideoIntroduction() {
         <button
           onClick={handleClose}
           type="button"
-          className="1xl:top-3 1xl:right-3 absolute top-1 right-1 z-10 cursor-pointer rounded-lg bg-white transition-all duration-300 hover:bg-black hover:text-white md:top-2 md:right-2 md:rounded-xl"
+          className="1xl:top-3 1xl:right-3 bg-yellow_main hover:bg-hover absolute top-1 right-1 z-10 cursor-pointer rounded-full transition-all duration-300 hover:text-white md:top-2 md:right-2"
         >
           <div className="relative h-6 w-6 md:h-9 md:w-9">
-            <IconClose className="absolute top-1/2 left-1/2 h-8 w-9 -translate-x-1/2 -translate-y-1/2 fill-black hover:fill-white md:h-8 md:w-9" />
+            <IconClose className="absolute top-1/2 left-1/2 h-8 w-9 -translate-x-1/2 -translate-y-1/2 fill-black md:h-8 md:w-9" />
           </div>
         </button>
         <video
@@ -45,9 +45,9 @@ function VideoIntroduction() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Посилання на номер телефону ватсапп"
-            className="mx-auto w-[90%] rounded-2xl bg-black p-0.5 text-center text-white transition-all duration-300 hover:bg-white hover:text-black md:p-2"
+            className="mx-auto w-[90%] rounded-2xl bg-black p-0.5 text-center text-white transition-all duration-300 hover:bg-white hover:text-black md:p-1"
           >
-            Say Hello
+            Задай питання
           </a>
         </div>
       </div>
