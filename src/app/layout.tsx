@@ -73,9 +73,14 @@ export default function RootLayout({
         <Footer />
         <Cookies />
         <Toaster richColors />
-        <ButtonScrollToTop />
         <Analytics />
-        <VideoIntroduction />
+
+        <div className="fixed right-4 bottom-0 z-[10000] flex flex-col justify-end md:right-10">
+          <VideoIntroduction />
+          <div className="flex justify-end">
+            <ButtonScrollToTop />
+          </div>
+        </div>
       </body>
     </html>
   );

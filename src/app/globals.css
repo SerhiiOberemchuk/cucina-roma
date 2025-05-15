@@ -196,10 +196,14 @@ body {
 }
 
 .scroll-to-top {
+  position: relative !important;
   background-color: var(--color-yellow_main) !important;
   border-radius: 50% !important;
   height: 48px !important  ;
   width: 48px !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  margin-block: 20px !important;
   transition: all 300ms ease-in-out !important;
 }
 
