@@ -49,7 +49,7 @@ function VideoIntroduction() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Посилання на номер телефону ватсапп"
-            className="mx-auto w-[95%] rounded-2xl bg-black p-0.5 text-center text-white transition-all duration-300 hover:bg-white hover:text-black md:p-1"
+            className="mx-auto w-[95%] rounded-2xl bg-black p-0.5 text-center font-sans text-[14px] text-white transition-all duration-300 hover:bg-white hover:text-black md:p-1 md:text-base"
           >
             Задай питання
           </a>
