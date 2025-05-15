@@ -75,7 +75,7 @@ export default function RootLayout({
         <Toaster richColors />
         <Analytics />
 
-        <div className="fixed right-4 bottom-0 z-[10000] md:right-10">
+        <div className="fixed right-4 bottom-[34px] z-[10000] md:right-10">
           <VideoIntroduction />
           <div className="flex justify-end">
             <ButtonScrollToTop />
