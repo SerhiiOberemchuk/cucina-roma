@@ -1,16 +1,28 @@
+"use client";
+
 import WhatsUpIcon1 from "@/assets/icons/whatsapp1.svg";
 import WhatsUpIcon from "@/assets/icons/whatsapp.svg";
 import { cn } from "@/utils/cn";
+import { trackEvent } from "@/utils/analytics";
 
 type Props = { place: "footer" | "hero_section"; className?: string };
 
 function WhatsAppLink({ place, className }: Props) {
+  const handleClick = () => {
+    trackEvent("contact", {
+      event_category: "messenger",
+      event_label: `whatsapp_${place}`,
+      method: "whatsapp",
+    });
+  };
+
   return (
     <a
       href="https://wa.me/393249888194"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Посилання на номер телефону ватсапп"
+      onClick={handleClick}
       className={cn(
         "inline-flex h-fit w-fit items-center justify-center",
         place === "hero_section" &&

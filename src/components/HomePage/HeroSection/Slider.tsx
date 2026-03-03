@@ -33,6 +33,14 @@ const images = {
   ],
 };
 
+const slideAltTexts = [
+  "Кулінарний майстер-клас у Римі з україномовним супроводом",
+  "Майстер-клас з приготування пасти та тірамісу в Римі",
+  "Майстер-клас з приготування піци в історичному центрі Рима",
+  "Гастрономічний досвід Cucina Roma для туристів у Римі",
+  "Винна дегустація та італійські закуски в Римі",
+];
+
 export default function HeroSlider() {
   const [device, setDevice] = useState<"mobile" | "tablet" | "desktop">(
     "desktop",
@@ -65,7 +73,7 @@ export default function HeroSlider() {
           <SwiperSlide key={index}>
             <Image
               src={src}
-              alt={`Slide ${index + 1}`}
+              alt={slideAltTexts[index] ?? "Кулінарний майстер-клас у Римі"}
               fill
               className="max-h-[100vh] rounded-4xl object-cover"
               sizes="(max-width: 480px) 100vw, (max-width: 1024px) 100vw, 100vw"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Cormorant_Garamond, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import Header from "@/layouts/Header";
@@ -25,13 +26,20 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Cucina Roma",
+  title: {
+    default: "Cucina Roma",
+    template: "%s | Cucina Roma",
+  },
   description:
-    "Мрії про Рим та справжню італійську кухню стають реальністю. Відкривайте Італію з душею разом з нами. Вітаємо! Мрієте про подорож до Рима? Ми — україномовний туристичний проєкт, який допоможе вам відкрити Італію. Авторські екскурсії античним Римом. Ватикан. Індивідуальні екскурсії за межі Риму. Організація та комфортний трансфер. Гастрономічні екскурсії для поціновувачів традиційної італійської кухні. Розробка індивідуальних програм для груп туристів, повне супроводження. Організація особливих подій у топових локаціях.",
+    "Cucina Roma - кулінарні майстер-класи в Римі з україномовним супроводом, бронюванням онлайн та локаціями в історичному центрі міста.",
   icons: {
     icon: "/icons/lady.svg",
   },
   metadataBase: new URL("https://www.cucinaroma.com.ua"),
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Cucina Roma",
     description:
@@ -71,14 +79,22 @@ export default function RootLayout({
         <SEOJsonLd />
         <main className="flex-1">{children}</main>
         <Footer />
-        <Cookies />
-        <Toaster richColors />
+        <Suspense fallback={null}>
+          <Cookies />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Toaster richColors />
+        </Suspense>
         <Analytics />
 
         <div className="fixed right-4 bottom-[34px] z-[10000] md:right-10">
-          <VideoIntroduction />
+          <Suspense fallback={null}>
+            <VideoIntroduction />
+          </Suspense>
           <div className="flex justify-end">
-            <ButtonScrollToTop />
+            <Suspense fallback={null}>
+              <ButtonScrollToTop />
+            </Suspense>
           </div>
         </div>
       </body>

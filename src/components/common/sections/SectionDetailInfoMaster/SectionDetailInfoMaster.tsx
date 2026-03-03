@@ -31,7 +31,7 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
             className="mx-auto rounded-3xl object-cover md:h-[588px] md:w-[688px] xl:mx-0 xl:w-[588px]"
           />
           <div className="mt-6 flex flex-col justify-center gap-6 xl:mt-0 xl:max-w-[488px]">
-            <h3 className="textH3 text-text">{title}</h3>
+            <h1 className="textH3 text-text">{title}</h1>
             <ul className="flex flex-col gap-3">
               <li className="btn_text text-grey_stroke_logo flex gap-2">
                 <IconPrice /> <span>{prise}€ за особу</span>

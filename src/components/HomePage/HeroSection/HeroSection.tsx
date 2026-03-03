@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import WhatsAppLink from "../../common/Links/WhatsAppLink";
 import Container from "../../common/Container";
 import HeroSlider from "./Slider";
@@ -6,7 +7,9 @@ function HeroSection() {
   return (
     <section className="py-10 md:py-16 xl:py-0 xl:pt-5 xl:pb-20">
       <Container className="relative">
-        <HeroSlider />
+        <Suspense fallback={null}>
+          <HeroSlider />
+        </Suspense>
         <WhatsAppLink
           place="hero_section"
           className="z-[5] xl:top-2 xl:right-32"
