@@ -3,11 +3,27 @@ import WhatsAppLink from "../../common/Links/WhatsAppLink";
 import Container from "../../common/Container";
 import HeroSlider from "./Slider";
 
+function HeroSliderFallback() {
+  return (
+    <div aria-hidden className="pb-7">
+      <div className="relative h-[680px] overflow-hidden rounded-4xl md:max-h-[80vh]">
+        <div className="absolute inset-0 bg-main_blue" />
+        <div className="absolute inset-0 bg-linear-to-br from-main_blue via-main_blue/90 to-main_blue/70" />
+      </div>
+      <div className="mt-4 flex items-center justify-center gap-1.5">
+        <span className="h-1.5 w-5 rounded-full bg-yellow_main/80" />
+        <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
+        <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
+      </div>
+    </div>
+  );
+}
+
 function HeroSection() {
   return (
     <section className="py-10 md:py-16 xl:py-0 xl:pt-5 xl:pb-20">
       <Container className="relative">
-        <Suspense fallback={null}>
+        <Suspense fallback={<HeroSliderFallback />}>
           <HeroSlider />
         </Suspense>
         <WhatsAppLink
