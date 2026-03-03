@@ -9,6 +9,7 @@ import SEOJsonLd from "@/utils/SEOJsonLd";
 import { Toaster } from "sonner";
 import ButtonScrollToTop from "@/components/ButtonScrollToTop";
 import { Analytics } from "@/components/Analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import VideoIntroduction from "@/components/VideoIntroduction";
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -86,7 +87,7 @@ export default function RootLayout({
           <Toaster richColors />
         </Suspense>
         <Analytics />
-
+        <VercelAnalytics />
         <div className="fixed right-4 bottom-[34px] z-[10000] md:right-10">
           <Suspense fallback={null}>
             <VideoIntroduction />
