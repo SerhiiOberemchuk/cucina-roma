@@ -22,6 +22,10 @@ function NavMenu({ className, type, onClick }: Props) {
         type={type}
         linkName="Майстер-класи"
       />
+
+      {type === "footer" && (
+        <NavLink onClick={onClick} href="/faq" type={type} linkName="FAQ" />
+      )}
     </nav>
   );
 }

@@ -2,6 +2,16 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  cacheComponents: true,
+  reactCompiler: true,
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
 
   async redirects() {
     return [
@@ -24,6 +34,9 @@ const nextConfig: NextConfig = {
     const fileLoaderRule = config.module.rules.find((rule: any) =>
       rule.test?.test?.(".svg"),
     );
+    if (!fileLoaderRule) {
+      return config;
+    }
 
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
@@ -36,7 +49,9 @@ const nextConfig: NextConfig = {
       {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
-        resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+        resourceQuery: {
+          not: [...(fileLoaderRule.resourceQuery?.not ?? []), /url/],
+        }, // exclude if *.svg?url
         use: ["@svgr/webpack"],
       },
     );

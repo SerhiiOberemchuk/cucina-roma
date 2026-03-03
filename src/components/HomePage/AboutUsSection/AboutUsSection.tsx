@@ -59,21 +59,21 @@ function AboutUsSection() {
             src={"/images/About360.jpg"}
             width={328}
             height={580}
-            alt="Про нас"
+            alt="Команда Cucina Roma у Римі"
           />
           <Image
             className="mx-auto mt-20 hidden w-full rounded-3xl md:block xl:hidden"
             src={"/images/About768.jpg"}
             width={688}
             height={580}
-            alt="Про нас"
+            alt="Засновниця Cucina Roma"
           />
           <Image
             className="mx-auto hidden min-h-[580px] rounded-3xl object-cover xl:block"
             src={"/images/About1440.jpg"}
             width={588}
             height={580}
-            alt="Про нас"
+            alt="Проєкт кулінарних майстер-класів у Римі"
           />
         </div>
       </Container>

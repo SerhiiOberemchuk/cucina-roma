@@ -6,8 +6,6 @@ import WhatsAppLink from "@/components/common/Links/WhatsAppLink";
 import Link from "next/link";
 
 function Footer() {
-  const data = new Date();
-
   return (
     <footer className="bg-main_blue pt-10 pb-4 md:pt-6 md:pb-0">
       <Container className="flex flex-col gap-16 md:gap-10">
@@ -34,7 +32,7 @@ function Footer() {
             href={"/docs"}
             className="hover:text-hover active:text-pressed transition-all duration-300"
           >
-            Політика та приватність <span>{data.getFullYear()}</span> ©{" "}
+            Політика та приватність <span>2026</span> ©{" "}
             <br className="md:hidden" />
             Усі права захищені
           </Link>

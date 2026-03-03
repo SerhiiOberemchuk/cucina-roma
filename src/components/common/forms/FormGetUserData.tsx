@@ -5,6 +5,7 @@ import { cn } from "@/utils/cn";
 import { toast } from "sonner";
 import IconError from "@/assets/icons/icon_error.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { trackEvent } from "@/utils/analytics";
 
 type Props = {
   title?: string;
@@ -50,6 +51,11 @@ function FormGetUserData({
       const data = await response.json();
 
       if (data.success) {
+        trackEvent("generate_lead", {
+          event_category: "form",
+          event_label: service,
+          ...(typeof prise === "number" ? { value: prise } : {}),
+        });
         toast.success("Запит відправлено успішно!");
       } else {
         toast.error("Помилка при надсиланні!");

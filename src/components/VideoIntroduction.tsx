@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { useState } from "react";
+import { trackEvent } from "@/utils/analytics";
 
 function VideoIntroduction() {
   const [isOpen, setIsOpen] = useState(true);
@@ -17,6 +18,15 @@ function VideoIntroduction() {
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  const handleWhatsAppClick = () => {
+    trackEvent("contact", {
+      event_category: "messenger",
+      event_label: "whatsapp_video_widget",
+      method: "whatsapp",
+    });
+  };
+
   return (
     <div className="rounded-2xl">
       <div className="relative min-h-40 w-full min-w-24 rounded-2xl">
@@ -49,6 +59,7 @@ function VideoIntroduction() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Посилання на номер телефону ватсапп"
+            onClick={handleWhatsAppClick}
             className="mx-auto w-[95%] rounded-2xl bg-black p-0.5 text-center font-sans text-[14px] text-white transition-all duration-300 hover:bg-white hover:text-black md:p-1 md:text-base"
           >
             Задай питання

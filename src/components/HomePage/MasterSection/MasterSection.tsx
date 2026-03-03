@@ -48,21 +48,21 @@ function MasterSection() {
             src={"/images/master360.jpg"}
             width={328}
             height={580}
-            alt="Зображення піци"
+            alt="Майстер-клас з італійської кухні у Римі"
           />
           <Image
             className="mx-auto mt-20 hidden w-full md:block xl:hidden"
             src={"/images/master768.jpg"}
             width={688}
             height={580}
-            alt="Зображення піци"
+            alt="Кулінарний майстер-клас Cucina Roma"
           />
           <Image
             className="hidden xl:block"
             src={"/images/master1440.jpg"}
             width={588}
             height={580}
-            alt="Зображення піци"
+            alt="Італійський кулінарний досвід у Римі"
           />
         </div>
       </Container>
