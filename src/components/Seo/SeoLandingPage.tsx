@@ -39,7 +39,8 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
       "Ідеально для пар, друзів, родин і міні-груп.",
     ],
     activity: "кулінарні майстер-класи та гастрономічні враження в Римі",
-    audience: "пари, родини, друзі, невеликі групи та гості, які хочуть живий досвід, а не стандартну екскурсію",
+    audience:
+      "пари, родини, друзі, невеликі групи та гості, які хочуть живий досвід, а не стандартну екскурсію",
     result:
       "ви отримуєте не просто активність на 2 години, а емоцію подорожі, яку хочеться повторити і згадувати",
     atmosphere:
@@ -66,7 +67,7 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
     atmosphere:
       "дружня кухня-студія, де комфортно і новачкам, і тим, хто вже любить готувати",
     bookingFlow:
-      "відкрити сторінку pizza master class, обрати дату, залишити контакти й отримати швидке підтвердження",
+      "відкрити сторінку формату Pizza + Tiramisu, обрати дату, залишити контакти й отримати швидке підтвердження",
   },
   "pasta-class-rome": {
     eyebrow: "Pasta Class Rome",
@@ -100,7 +101,8 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
       "Зручно для пар, друзів і невеликих компаній.",
       "Бронювання на конкретну дату займає кілька хвилин.",
     ],
-    activity: "десертний кулінарний досвід із тірамісу в рамках повного заняття",
+    activity:
+      "десертний кулінарний досвід із тірамісу в рамках повного заняття",
     audience:
       "гості, які хочуть романтичну, смачну й фотогенічну активність у Римі",
     result:
@@ -121,13 +123,13 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
       "Зручна локація в центрі Риму.",
       "Швидкий перехід на сторінку бронювання дегустації.",
     ],
-    activity: "винна дегустація з італійськими закусками та гастрономічними поєднаннями",
+    activity:
+      "винна дегустація з італійськими закусками та гастрономічними поєднаннями",
     audience:
       "дорослі мандрівники, які хочуть елегантний формат відпочинку після прогулянок містом",
     result:
       "ви не лише дегустуєте, а краще розумієте відмінності смаків, ароматів і поєднань",
-    atmosphere:
-      "затишний, неквапливий формат у стилі італійського вечора",
+    atmosphere: "затишний, неквапливий формат у стилі італійського вечора",
     bookingFlow:
       "відкрити сторінку wine tasting, обрати дату і залишити заявку для підтвердження",
   },
@@ -147,10 +149,9 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
       "пари, друзі, сім'ї та міні-команди, які цінують індивідуальний підхід",
     result:
       "ви отримуєте подію під себе: темп, атмосфера та акценти узгоджуються до початку заняття",
-    atmosphere:
-      "камерна атмосфера з фокусом на ваш настрій і комфорт",
+    atmosphere: "камерна атмосфера з фокусом на ваш настрій і комфорт",
     bookingFlow:
-      "перейти на master сторінку, вказати формат і дату, отримати персональне підтвердження",
+      "перейти на сторінку обраного формату, вказати формат і дату, отримати персональне підтвердження",
   },
   "family-cooking-class-rome": {
     eyebrow: "Family Cooking Class Rome",
@@ -171,7 +172,7 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
     atmosphere:
       "спокійна і доброзичлива атмосфера, де комфортно дітям різного віку",
     bookingFlow:
-      "обрати формат на сторінці master, залишити заявку й отримати підтвердження з деталями",
+      "обрати формат на сторінці бронювання, залишити заявку й отримати підтвердження з деталями",
   },
   "ukrainian-speaking-cooking-class-rome": {
     eyebrow: "Ukrainian Speaking Cooking Class",
@@ -205,7 +206,8 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
       "Підходить для пар, друзів і родин.",
       "Комфортна комунікація українською.",
     ],
-    activity: "кулінарний клас у зручній локації поблизу ключових точок центру Риму",
+    activity:
+      "кулінарний клас у зручній локації поблизу ключових точок центру Риму",
     audience:
       "туристи, які хочуть оптимізувати час у місті та додати гастро-враження у щільний день",
     result:
@@ -213,7 +215,7 @@ const SERVICE_CONTENT_BY_SLUG: Record<string, ServiceContent> = {
     atmosphere:
       "формат, який легко вбудовується у денний маршрут і не перевантажує графік",
     bookingFlow:
-      "перейти на master сторінку обраного формату, вказати дату і отримати швидке підтвердження",
+      "перейти на сторінку обраного формату, вказати дату і отримати швидке підтвердження",
   },
 };
 
@@ -270,17 +272,21 @@ function SeoLandingPage({ page }: Props) {
 
         {ctaMaster && (
           <div className="mt-8 rounded-3xl border p-5 md:p-6">
-            <h2 className="textH3 text-main_blue">Готові забронювати майстер-клас?</h2>
+            <h2 className="textH3 text-main_blue">
+              Готові забронювати майстер-клас?
+            </h2>
             <TextBody className="mt-2 max-w-[900px]">
               Перейдіть на основну сторінку цього формату та зафіксуйте дату.
               Якщо потрібно, ви завжди можете швидко узгодити деталі перед
               підтвердженням.
             </TextBody>
-            <LinkYelow
-              href={`/master/${ctaMaster.page}`}
-              linkTitle="Перейти до бронювання"
-              className="mt-4 md:max-w-fit"
-            />
+            <div className="pt-7">
+              <LinkYelow
+                href={`/master/${ctaMaster.page}`}
+                linkTitle="Перейти до бронювання"
+                className="mt-4 md:max-w-fit"
+              />
+            </div>
           </div>
         )}
 
@@ -289,7 +295,7 @@ function SeoLandingPage({ page }: Props) {
             href="/seo/cooking-class-rome"
             className="text-main_blue hover:text-hover inline-flex transition-all duration-300"
           >
-            SEO Hub: Cooking Class Rome
+            Всі кулінарні формати в Римі
           </Link>
         </div>
 
@@ -317,7 +323,9 @@ function SeoLandingPage({ page }: Props) {
             <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
               {page.hubSections.map((section) => (
                 <article key={section.title} className="rounded-3xl border p-5">
-                  <h3 className="big_text_medium text-main_blue">{section.title}</h3>
+                  <h3 className="big_text_medium text-main_blue">
+                    {section.title}
+                  </h3>
                   <TextBody className="mt-2">{section.description}</TextBody>
                   <ul className="mt-3 flex flex-col gap-1">
                     {section.links.map((link) => (
@@ -339,15 +347,20 @@ function SeoLandingPage({ page }: Props) {
 
         <div className="mt-12 space-y-8">
           {renderedLongreadSections.map((section) => (
-            <article key={section.heading} className="rounded-3xl border p-5 md:p-6">
+            <article
+              key={section.heading}
+              className="rounded-3xl border p-5 md:p-6"
+            >
               <h2 className="textH3 text-main_blue">{section.heading}</h2>
-              <TextBody className="mt-3 max-w-[980px]">{section.paragraph}</TextBody>
+              <TextBody className="mt-3 max-w-[980px]">
+                {section.paragraph}
+              </TextBody>
             </article>
           ))}
         </div>
 
         <div className="mt-12">
-          <h2 className="textH3 text-main_blue">Рекомендовані master формати</h2>
+          <h2 className="textH3 text-main_blue">Рекомендовані формати</h2>
           <ul className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
             {relatedMasters.map((item) => (
               <li key={item.page} className="rounded-3xl border p-4">

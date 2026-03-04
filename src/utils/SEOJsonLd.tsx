@@ -75,6 +75,16 @@ export default function SEOJsonLd() {
                 },
               ],
             },
+            {
+              "@type": "WebSite",
+              "@id": `${BASE_URL}#website`,
+              url: BASE_URL,
+              name: "Cucina Roma",
+              inLanguage: ["uk", "en"],
+              publisher: {
+                "@id": `${BASE_URL}#organization`,
+              },
+            },
           ],
         }),
       }}

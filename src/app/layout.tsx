@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   title: "Cooking Class Rome | Cooking Class in Rome | Cucina Roma",
   description:
     "Кулінарні майстер-класи в Римі для україномовних гостей: pizza, pasta, tiramisu і wine tasting у центрі міста з прямим online booking у Cucina Roma.",
+  alternates: {
+    canonical: BASE_URL,
+  },
   icons: {
     icon: "/icons/lady.svg",
   },
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: "Cucina Roma",
     type: "website",
-    locale: "en_US",
+    locale: "uk_UA",
     images: [
       {
         url: DEFAULT_OG_IMAGE,

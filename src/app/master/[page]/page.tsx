@@ -17,24 +17,24 @@ const masterMetadataMap: Record<
   }
 > = {
   pizza_tiramisu: {
-    primaryKeyword: "Pizza and Tiramisu Class Rome",
+    primaryKeyword: "Book Pizza and Tiramisu Class Rome",
     description:
-      "Майстер-клас pizza and tiramisu у Rome з україномовним супроводом, hands-on форматом, central location та швидким бронюванням у Cucina Roma.",
+      "Забронюйте pizza and tiramisu class у Rome: hands-on формат, україномовний супровід, центральна локація та швидке підтвердження заявки в Cucina Roma.",
   },
   pasta_tiramisu: {
-    primaryKeyword: "Pasta and Tiramisu Class Rome",
+    primaryKeyword: "Book Pasta and Tiramisu Class Rome",
     description:
-      "Майстер-клас pasta and tiramisu у Rome: автентичні техніки, україномовна підтримка, локація в центрі та direct booking на сторінці Cucina Roma.",
+      "Забронюйте pasta and tiramisu class у Rome: автентичні техніки, україномовна підтримка, локація в центрі та direct booking на сторінці Cucina Roma.",
   },
   nioki_tiramisu: {
-    primaryKeyword: "Gnocchi and Tiramisu Class Rome",
+    primaryKeyword: "Book Gnocchi and Tiramisu Class Rome",
     description:
-      "Gnocchi and tiramisu class у Rome для україномовних гостей: покроковий формат, central city location і просте online booking підтвердження.",
+      "Забронюйте gnocchi and tiramisu class у Rome: покроковий формат, central city location та просте online booking підтвердження в Cucina Roma.",
   },
   wino: {
-    primaryKeyword: "Wine Tasting Rome Experience",
+    primaryKeyword: "Book Wine Tasting Rome Experience",
     description:
-      "Wine tasting Rome experience з італійськими pairings, україномовним супроводом, локацією в центрі та швидким бронюванням у Cucina Roma.",
+      "Забронюйте wine tasting Rome experience: італійські pairings, україномовний супровід, локація в центрі та швидке підтвердження бронювання в Cucina Roma.",
   },
 };
 
@@ -50,9 +50,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!detail || !metadataConfig) {
     return buildPageMetadata({
       pathname: "/",
-      primaryKeyword: "Cooking Class Rome",
+      primaryKeyword: "Ukrainian Cooking Classes in Rome",
       description:
-        "Кулінарні майстер-класи в Римі для україномовних гостей: pizza, pasta, tiramisu і wine tasting у центрі міста з простим online booking.",
+        "Cucina Roma для україномовних гостей: кулінарні майстер-класи в Римі, персональний супровід, центральна локація та зручне онлайн-бронювання форматів.",
       type: "website",
     });
   }

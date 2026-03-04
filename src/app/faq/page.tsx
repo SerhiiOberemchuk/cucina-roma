@@ -22,7 +22,9 @@ export default function FaqPage() {
       <h1 className="sr-only">Cooking Class Rome FAQ</h1>
       <FaqSection />
       <Container className="pb-10 xl:pb-16">
-        <h2 className="textH3 text-main_blue mb-4">Корисні SEO сторінки</h2>
+        <h2 className="textH3 text-main_blue mb-4">
+          Корисні сторінки за форматами
+        </h2>
         <ul className="flex flex-col gap-2">
           {seoLandingPages.map((page) => (
             <li key={page.slug}>

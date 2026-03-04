@@ -5,9 +5,9 @@ import { buildPageMetadata } from "@/lib/seo";
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     pathname: "/",
-    primaryKeyword: "Cooking Class Rome",
+    primaryKeyword: "Ukrainian Cooking Classes in Rome",
     description:
-      "Кулінарні майстер-класи в Римі для україномовних гостей: pizza, pasta, tiramisu і wine tasting у центрі міста з простим online booking.",
+      "Cucina Roma для україномовних гостей: кулінарні майстер-класи в Римі, персональний супровід, центральна локація та зручне онлайн-бронювання форматів.",
     type: "website",
   });
 }
