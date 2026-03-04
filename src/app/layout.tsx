@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Cormorant_Garamond, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
@@ -11,6 +11,7 @@ import ButtonScrollToTop from "@/components/ButtonScrollToTop";
 import { Analytics } from "@/components/Analytics";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import VideoIntroduction from "@/components/VideoIntroduction";
+import { BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const cormorantGaramond = Cormorant_Garamond({
   weight: ["400", "500", "600"],
@@ -27,42 +28,40 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Cucina Roma",
-    template: "%s | Cucina Roma",
-  },
+  metadataBase: new URL(BASE_URL),
+  title: "Cooking Class Rome | Cooking Class in Rome | Cucina Roma",
   description:
-    "Cucina Roma - кулінарні майстер-класи в Римі з україномовним супроводом, бронюванням онлайн та локаціями в історичному центрі міста.",
+    "Кулінарні майстер-класи в Римі для україномовних гостей: pizza, pasta, tiramisu і wine tasting у центрі міста з прямим online booking у Cucina Roma.",
   icons: {
     icon: "/icons/lady.svg",
   },
-  metadataBase: new URL("https://www.cucinaroma.com.ua"),
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "Cucina Roma",
+    title: "Cooking Class Rome | Cooking Class in Rome | Cucina Roma",
     description:
-      "Авторські екскурсії в Римі. Ватикан, гастротури, трансфери, організація свят. Українською мовою.",
-    url: "https://www.cucinaroma.com.ua",
+      "Кулінарні майстер-класи в Римі для україномовних гостей: pizza, pasta, tiramisu і wine tasting у центрі міста з прямим online booking у Cucina Roma.",
+    url: BASE_URL,
     siteName: "Cucina Roma",
     type: "website",
-    locale: "uk_UA",
+    locale: "en_US",
     images: [
       {
-        url: "/images/hero_foto1.jpg",
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Cucina Roma - Твій гід у Римі",
+        alt: "Cooking Class Rome - Cucina Roma",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cucina Roma",
-    description: "Мрії про Рим та справжню італійську кухню стають реальністю.",
-    images: ["/images/hero_foto1.jpg"],
+    title: "Cooking Class Rome | Cooking Class in Rome | Cucina Roma",
+    description:
+      "Кулінарні майстер-класи в Римі для україномовних гостей: pizza, pasta, tiramisu і wine tasting у центрі міста з прямим online booking у Cucina Roma.",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -102,3 +101,4 @@ export default function RootLayout({
     </html>
   );
 }
+

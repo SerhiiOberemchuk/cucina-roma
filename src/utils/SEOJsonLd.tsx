@@ -1,42 +1,11 @@
-import Script from "next/script";
-import { dataMaster } from "@/data/dataMaster";
-import { dataDetailInfoMaster } from "@/data/dataDetailInfoMaster";
+﻿import Script from "next/script";
 import { LINK_INSTAGRAM } from "@/data/linkInstagram";
-
-const BASE_URL = "https://www.cucinaroma.com.ua";
+import { BASE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export default function SEOJsonLd() {
-  const serviceItems = dataMaster.map((item, index) => {
-    const detail = dataDetailInfoMaster[item.page];
-    const serviceUrl = `${BASE_URL}/master/${item.page}`;
-
-    return {
-      "@type": "Service",
-      "@id": `${serviceUrl}#service`,
-      name: detail.title,
-      serviceType: "Cooking Class",
-      description: detail.describe[0] ?? detail.title,
-      areaServed: {
-        "@type": "City",
-        name: "Rome",
-      },
-      provider: {
-        "@id": `${BASE_URL}#localbusiness`,
-      },
-      offers: {
-        "@type": "Offer",
-        price: item.prise,
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock",
-        url: serviceUrl,
-      },
-      position: index + 1,
-    };
-  });
-
   return (
     <Script
-      id="local-business-schema"
+      id="global-business-schema"
       type="application/ld+json"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
@@ -44,27 +13,50 @@ export default function SEOJsonLd() {
           "@context": "https://schema.org",
           "@graph": [
             {
+              "@type": "Organization",
+              "@id": `${BASE_URL}#organization`,
+              name: "Cucina Roma",
+              url: BASE_URL,
+              logo: `${BASE_URL}/icons/logo_horiz.svg`,
+              sameAs: [LINK_INSTAGRAM, "https://wa.me/393249888194"],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+39 324 988 8194",
+                  contactType: "customer service",
+                  areaServed: "IT",
+                  availableLanguage: ["English", "Ukrainian", "Italian"],
+                },
+              ],
+            },
+            {
               "@type": "LocalBusiness",
               "@id": `${BASE_URL}#localbusiness`,
               name: "Cucina Roma",
-              image: `${BASE_URL}/images/hero_foto1.jpg`,
+              image: DEFAULT_OG_IMAGE,
               url: BASE_URL,
               telephone: "+39 324 988 8194",
-              priceRange: "€€",
+              priceRange: "EUR 75-80",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Via del Pellegrino, 24",
                 postalCode: "00184",
-                addressLocality: "Roma",
+                addressLocality: "Rome",
                 addressRegion: "Lazio",
                 addressCountry: "IT",
               },
-              description:
-                "Кулінарні майстер-класи в Римі з україномовним супроводом: піца, паста, тірамісу, ньокі та винна дегустація.",
+              areaServed: {
+                "@type": "City",
+                name: "Rome",
+              },
               geo: {
                 "@type": "GeoCoordinates",
                 latitude: 41.8960565,
                 longitude: 12.4712456,
+              },
+              sameAs: [LINK_INSTAGRAM, "https://wa.me/393249888194"],
+              parentOrganization: {
+                "@id": `${BASE_URL}#organization`,
               },
               openingHoursSpecification: [
                 {
@@ -82,26 +74,11 @@ export default function SEOJsonLd() {
                   closes: "19:00",
                 },
               ],
-              sameAs: [LINK_INSTAGRAM],
             },
-            {
-              "@type": "OfferCatalog",
-              "@id": `${BASE_URL}#offers`,
-              name: "Майстер-класи в Римі",
-              itemListElement: serviceItems.map((service) => ({
-                "@type": "Offer",
-                itemOffered: {
-                  "@id": service["@id"],
-                },
-                price: service.offers.price,
-                priceCurrency: "EUR",
-                url: service.offers.url,
-              })),
-            },
-            ...serviceItems,
           ],
         }),
       }}
     />
   );
 }
+
