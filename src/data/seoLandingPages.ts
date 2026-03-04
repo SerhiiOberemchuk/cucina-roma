@@ -1,372 +1,421 @@
-import { DataCardMaster } from "@/data/dataMaster";
+﻿import { DataCardMaster } from "@/data/dataMaster";
+
+export type SeoHubSection = {
+  title: string;
+  description: string;
+  links: Array<{
+    slug: string;
+    label: string;
+  }>;
+};
 
 export type SeoLandingPageData = {
   slug: string;
   navTitle: string;
   eyebrow: string;
   h1: string;
+  primaryKeyword: string;
+  metaDescription: string;
   intro: string;
   highlights: string[];
   keywords: string[];
   relatedMasterPages: DataCardMaster["page"][];
+  ctaMasterPage: DataCardMaster["page"];
+  relatedSeoSlugs: string[];
+  contentAngles: string[];
+  hubSections?: SeoHubSection[];
 };
 
 export const seoLandingPages: SeoLandingPageData[] = [
   {
     slug: "cooking-class-rome",
     navTitle: "Cooking Class Rome",
-    eyebrow: "seo сторінка",
-    h1: "Cooking Class Rome з україномовним супроводом",
+    eyebrow: "SEO HUB",
+    h1: "Cooking Class Rome: кулінарні враження в Римі для україномовних гостей",
+    primaryKeyword: "Cooking Class Rome",
+    metaDescription:
+      "Cooking class Rome у Cucina Roma: піца, паста, тірамісу, wine tasting, приватні та сімейні формати з україномовним супроводом і швидким бронюванням.",
     intro:
-      "Cucina Roma організовує кулінарні майстер-класи в Римі для туристів, які хочуть автентичний італійський досвід без мовного бар'єру.",
+      "Це головна SEO-сторінка кластера. Вона збирає broad intent українською, додає ключові англомовні сигнали і направляє трафік на релевантні money pages.",
     highlights: [
-      "Локація в історичному центрі Рима.",
-      "Майстер-класи з піци, пасти, ньокі та тірамісу.",
-      "Україномовний супровід протягом події.",
-      "Комфортне бронювання через сайт або WhatsApp.",
+      "Хаб без doorway-дублювання для broad intent.",
+      "UA-first контент + EN пошукові маркери.",
+      "Внутрішні лінки на всі ключові SEO гілки.",
+      "CTA на master сторінки для конверсії.",
+      "Єдина точка консолідації authority.",
     ],
     keywords: [
       "cooking class rome",
-      "cooking classes in rome italy",
+      "italian cooking class rome",
+      "food experience rome",
       "кулінарний майстер-клас рим",
-      "майстер-клас італійська кухня рим",
+      "corsi di cucina roma",
     ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu"],
-  },
-  {
-    slug: "pasta-class-rome",
-    navTitle: "Pasta Class Rome",
-    eyebrow: "seo сторінка",
-    h1: "Pasta Class Rome: майстер-клас пасти та тірамісу",
-    intro:
-      "Сторінка для пошукового наміру «pasta class Rome». Формат події підходить парам, друзям і невеликим туристичним групам.",
-    highlights: [
-      "Практичний формат приготування пасти з шефом.",
-      "Десерт тірамісу в межах одного заняття.",
-      "Тривалість близько 2 годин.",
-      "Підійде для першого кулінарного досвіду в Італії.",
+    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu", "wino"],
+    ctaMasterPage: "pizza_tiramisu",
+    relatedSeoSlugs: ["pizza-class-rome", "pasta-class-rome", "private-cooking-class-rome", "wine-tasting-rome"],
+    contentAngles: [
+      "Консолідація intent замість doorway pages",
+      "UA-first стратегія для пріоритетної аудиторії",
+      "English signals для international indexing",
+      "Передача authority на /master/* сторінки",
+      "Локальна релевантність Rome і Vatican",
+      "Анти-cannibalization через one intent one page",
+      "Користувацький шлях від broad query до booking",
+      "Масштабування SEO без дублювання URL",
     ],
-    keywords: [
-      "pasta class rome",
-      "pasta and tiramisu class rome",
-      "майстер-клас пасти рим",
-      "тірамісу майстер-клас рим",
+    hubSections: [
+      {
+        title: "Pizza classes",
+        description: "Майстер-класи з піци для гостей, які хочуть практичний і смачний досвід у Римі.",
+        links: [
+          { slug: "pizza-class-rome", label: "Pizza Class Rome" },
+          { slug: "tiramisu-class-rome", label: "Tiramisu Class Rome" },
+        ],
+      },
+      {
+        title: "Pasta classes",
+        description: "Формати з пастою та близькими італійськими техніками для поціновувачів handmade кухні.",
+        links: [
+          { slug: "pasta-class-rome", label: "Pasta Class Rome" },
+        ],
+      },
+      {
+        title: "Private experiences",
+        description: "Приватні сценарії для пар, святкувань і камерних компаній.",
+        links: [
+          { slug: "private-cooking-class-rome", label: "Private Cooking Class Rome" },
+        ],
+      },
+      {
+        title: "Family experiences",
+        description: "Сімейні формати для подорожей із дітьми у комфортному темпі.",
+        links: [
+          { slug: "family-cooking-class-rome", label: "Family Cooking Class Rome" },
+        ],
+      },
+      {
+        title: "Ukrainian speaking classes",
+        description: "Формати з повноцінним україномовним супроводом від початку до завершення класу.",
+        links: [
+          {
+            slug: "ukrainian-speaking-cooking-class-rome",
+            label: "Ukrainian Speaking Class",
+          },
+        ],
+      },
+      {
+        title: "Location based classes",
+        description: "Зручні варіанти для гостей, які планують день біля Vatican або в центрі міста.",
+        links: [
+          {
+            slug: "cooking-class-near-vatican",
+            label: "Cooking Class Near Vatican",
+          },
+          { slug: "wine-tasting-rome", label: "Wine Tasting Rome" },
+        ],
+      },
     ],
-    relatedMasterPages: ["pasta_tiramisu"],
-  },
-  {
-    slug: "wine-tasting-rome",
-    navTitle: "Wine Tasting Rome",
-    eyebrow: "seo сторінка",
-    h1: "Wine Tasting Rome: дегустація вина в Римі",
-    intro:
-      "Сторінка для пошукового наміру «wine tasting Rome». Формат включає дегустацію добірних вин та італійські закуски у центрі міста.",
-    highlights: [
-      "Регіональні вина Італії та гастро-поєднання.",
-      "Формат для пари, друзів або подарункового сертифікату.",
-      "Зручна локація в центрі Рима.",
-      "Швидке бронювання без складних кроків.",
-    ],
-    keywords: [
-      "wine tasting rome",
-      "wine tasting in rome italy",
-      "дегустація вина рим",
-      "винний тур рим",
-    ],
-    relatedMasterPages: ["wino"],
   },
   {
     slug: "pizza-class-rome",
     navTitle: "Pizza Class Rome",
-    eyebrow: "seo сторінка",
-    h1: "Pizza Class Rome: майстер-клас піци та тірамісу",
+    eyebrow: "SEO page",
+    h1: "Pizza Class Rome: майстер-клас піци та тірамісу в Римі",
+    primaryKeyword: "Pizza Class Rome",
+    metaDescription:
+      "Pizza class Rome у Cucina Roma: hands-on робота з тістом, випікання піци, тірамісу та україномовний супровід із швидким підтвердженням бронювання.",
     intro:
-      "Сторінка під пошуковий намір «pizza class Rome» для туристів, які хочуть відчути неаполітанські техніки приготування піци в Римі.",
+      "Сторінка закриває точний pizza intent і пояснює формат українською, з ключовими англомовними маркерами для стабільної індексації.",
     highlights: [
-      "Практичне приготування тіста та випікання піци.",
-      "Додатково десерт тірамісу в межах одного формату.",
-      "Зручний формат для першого знайомства з італійською кухнею.",
-      "Бронювання онлайн або через WhatsApp.",
+      "Primary focus: pizza class Rome.",
+      "Tiramisu як частина повного досвіду.",
+      "CTA на /master/pizza_tiramisu.",
+      "Back-link на hub сторінку.",
+      "Внутрішні посилання на суміжні інтенти.",
     ],
     keywords: [
       "pizza class rome",
       "pizza making class rome",
-      "майстер-клас піца рим",
-      "піца та тірамісу рим",
+      "майстер-клас піци рим",
+      "pizza and tiramisu class rome",
     ],
     relatedMasterPages: ["pizza_tiramisu"],
+    ctaMasterPage: "pizza_tiramisu",
+    relatedSeoSlugs: ["cooking-class-rome", "tiramisu-class-rome", "private-cooking-class-rome", "family-cooking-class-rome"],
+    contentAngles: [
+      "Що користувач очікує від pizza class у Rome",
+      "Практичний формат hands-on замість загальних обіцянок",
+      "Як поєднання pizza + tiramisu підвищує цінність",
+      "Роль сторінки у передачі authority на master page",
+      "UA-first пояснення для швидкого вибору",
+      "English phrase coverage для Google indexing",
+      "Internal links без канібалізації",
+      "Масштабування контенту без дублюючих URL",
+    ],
+  },
+  {
+    slug: "pasta-class-rome",
+    navTitle: "Pasta Class Rome",
+    eyebrow: "SEO page",
+    h1: "Pasta Class Rome: майстер-клас пасти та тірамісу в Римі",
+    primaryKeyword: "Pasta Class Rome",
+    metaDescription:
+      "Pasta class Rome у Cucina Roma: handmade pasta, італійські техніки, тірамісу та україномовний супровід у затишному форматі в центрі Риму.",
+    intro:
+      "Сторінка консолідує pasta та gnocchi intent в один сильний URL, щоб прибрати дублювання та посилити topical authority.",
+    highlights: [
+      "Pasta intent як primary keyword.",
+      "Gnocchi intent merged у цій сторінці.",
+      "CTA на /master/pasta_tiramisu.",
+      "Сильний внутрішній зв'язок із hub.",
+      "Без doorway і без cannibalization.",
+    ],
+    keywords: [
+      "pasta class rome",
+      "gnocchi class rome",
+      "pasta and tiramisu class rome",
+      "майстер-клас пасти рим",
+    ],
+    relatedMasterPages: ["pasta_tiramisu", "nioki_tiramisu"],
+    ctaMasterPage: "pasta_tiramisu",
+    relatedSeoSlugs: ["cooking-class-rome", "private-cooking-class-rome", "family-cooking-class-rome", "tiramisu-class-rome"],
+    contentAngles: [
+      "Консолідація pasta і gnocchi в одному релевантному URL",
+      "UA-first контент для головної клієнтської аудиторії",
+      "English ключі для розширеної видимості",
+      "Практичний опис формату для туристичного рішення",
+      "Передача authority на conversion page",
+      "Internal links для повного кластерного покриття",
+      "Анти-cannibalization логіка one intent one page",
+      "Оновлення сторінки без створення thin клонів",
+    ],
   },
   {
     slug: "tiramisu-class-rome",
     navTitle: "Tiramisu Class Rome",
-    eyebrow: "seo сторінка",
-    h1: "Tiramisu Class Rome: кулінарний досвід у Римі",
+    eyebrow: "SEO page",
+    h1: "Tiramisu Class Rome: солодкий майстер-клас у Римі",
+    primaryKeyword: "Tiramisu Class Rome",
+    metaDescription:
+      "Tiramisu class Rome у Cucina Roma: автентичний десертний досвід із практикою, тепла атмосфера, зручна локація та швидке бронювання для гостей Риму.",
     intro:
-      "Сторінка для запитів «tiramisu class Rome» з акцентом на практичне приготування італійського десерту в автентичному форматі.",
+      "Сторінка під десертний намір, що переводить користувача до реального bookable формату без дублювання інших SEO URL.",
     highlights: [
-      "Тірамісу як частина комплексного майстер-класу.",
-      "Формати з піцою, пастою або ньокі на вибір.",
-      "Підходить для пар, друзів і міні-груп.",
-      "Україномовний супровід протягом заняття.",
+      "Primary dessert intent.",
+      "Логічний зв'язок із pizza/pasta форматами.",
+      "CTA на релевантний master page.",
+      "Внутрішній перехід на hub і sibling pages.",
+      "Унікальний кут без копіпасту.",
     ],
     keywords: [
       "tiramisu class rome",
       "tiramisu making class rome",
-      "тірамісу майстер-клас рим",
       "десертний майстер-клас рим",
+      "tiramisu experience rome",
     ],
     relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu"],
+    ctaMasterPage: "pizza_tiramisu",
+    relatedSeoSlugs: ["cooking-class-rome", "pizza-class-rome", "pasta-class-rome", "private-cooking-class-rome"],
+    contentAngles: [
+      "Dessert-first намір як окрема точка входу",
+      "Відмінність від pizza/pasta URL",
+      "UA-first довіра для швидкого рішення",
+      "English query signals для search coverage",
+      "Передача користувача у conversion funnel",
+      "Internal linking і повернення на hub",
+      "Контентна глибина замість thin doorway pattern",
+      "Стабільне масштабування без дублювання",
+    ],
   },
   {
-    slug: "gnocchi-class-rome",
-    navTitle: "Gnocchi Class Rome",
-    eyebrow: "seo сторінка",
-    h1: "Gnocchi Class Rome: майстер-клас ньокі в Римі",
+    slug: "wine-tasting-rome",
+    navTitle: "Wine Tasting Rome",
+    eyebrow: "SEO page",
+    h1: "Wine Tasting Rome: дегустація вина та гастрономічні поєднання",
+    primaryKeyword: "Wine Tasting Rome",
+    metaDescription:
+      "Wine tasting Rome у Cucina Roma: італійські вина, гастрономічні pairings, атмосфера вечора в Римі та зручне бронювання для пар і друзів.",
     intro:
-      "Тематична сторінка для запитів «gnocchi class Rome» з фокусом на приготування ньокі та тірамісу у форматі кулінарної події.",
+      "Окрема сторінка для wine intent, щоб не змішувати дегустаційний сценарій із cooking-class запитами без потреби.",
     highlights: [
-      "Практика формування ньокі та робота з соусами.",
-      "Поєднання з десертом тірамісу в одному занятті.",
-      "Затишна локація в центральній частині Рима.",
-      "Зручний формат для туристів без мовного бар'єру.",
+      "Primary keyword: wine tasting Rome.",
+      "UA-first опис + English indexing підтримка.",
+      "CTA на /master/wino.",
+      "Контекстні лінки на hub/private/location.",
+      "Уникнення дублюючих food-experience URL.",
     ],
     keywords: [
-      "gnocchi class rome",
-      "gnocchi making class rome",
-      "майстер-клас ньокі рим",
-      "італійські ньокі рим",
+      "wine tasting rome",
+      "rome wine tasting experience",
+      "дегустація вина рим",
+      "wine and food pairing rome",
     ],
-    relatedMasterPages: ["nioki_tiramisu"],
-  },
-  {
-    slug: "italian-cooking-class-rome",
-    navTitle: "Italian Cooking Class Rome",
-    eyebrow: "seo сторінка",
-    h1: "Italian Cooking Class Rome для туристів у центрі міста",
-    intro:
-      "Сторінка для широкого кластера «italian cooking class Rome» з презентацією форматів Cucina Roma у центрі Рима.",
-    highlights: [
-      "Кілька форматів: піца, паста, ньокі, винна дегустація.",
-      "Підходить для подорожей, романтичних поїздок і подарунків.",
-      "Підтримка українською мовою протягом події.",
-      "Чітка структура бронювання без зайвих кроків.",
+    relatedMasterPages: ["wino"],
+    ctaMasterPage: "wino",
+    relatedSeoSlugs: ["cooking-class-rome", "private-cooking-class-rome", "cooking-class-near-vatican", "family-cooking-class-rome"],
+    contentAngles: [
+      "Окремий дегустаційний намір без змішування intent",
+      "Практичні критерії вибору для туриста",
+      "UA-first довіра і зрозумілість",
+      "English терміни для міжнародної видачі",
+      "Authority transfer на /master/wino",
+      "Контекстні внутрішні переходи",
+      "Відмова від thin food-experience сторінок",
+      "Системне масштабування wine-контенту",
     ],
-    keywords: [
-      "italian cooking class rome",
-      "italian cooking classes in rome",
-      "італійський кулінарний майстер-клас рим",
-      "готувати в римі майстер-клас",
-    ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu", "wino"],
-  },
-  {
-    slug: "food-experience-rome",
-    navTitle: "Food Experience Rome",
-    eyebrow: "seo сторінка",
-    h1: "Food Experience Rome: гастрономічний досвід у Римі",
-    intro:
-      "Сторінка для кластеру запитів «food experience Rome» з акцентом на гастрономічні враження, дегустації та кулінарні майстер-класи.",
-    highlights: [
-      "Комбінація приготування страв і дегустацій.",
-      "Підходить для туристів, які цінують локальний смак Італії.",
-      "Формати для пар, друзів і невеликих груп.",
-      "Бронювання заздалегідь на зручну дату.",
-    ],
-    keywords: [
-      "food experience rome",
-      "rome food experience",
-      "гастрономічний досвід рим",
-      "гастро активність рим",
-    ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "wino"],
-  },
-  {
-    slug: "cooking-class-rome-city-center",
-    navTitle: "Cooking Class Rome City Center",
-    eyebrow: "seo сторінка",
-    h1: "Cooking Class Rome City Center: майстер-класи в центрі Рима",
-    intro:
-      "Сторінка для запитів із гео-намірами: кулінарні майстер-класи в історичному центрі Рима з легкою логістикою для туристів.",
-    highlights: [
-      "Локація у центральному районі Рима.",
-      "Мінімум часу на дорогу під час подорожі.",
-      "Доступні формати для різних уподобань.",
-      "Зручна навігація та швидке підтвердження бронювання.",
-    ],
-    keywords: [
-      "cooking class rome city center",
-      "cooking class in central rome",
-      "майстер-клас рим центр",
-      "кулінарний майстер-клас у центрі рима",
-    ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu"],
   },
   {
     slug: "private-cooking-class-rome",
     navTitle: "Private Cooking Class Rome",
-    eyebrow: "seo page",
-    h1: "Private Cooking Class Rome for couples, families and friends",
+    eyebrow: "SEO page",
+    h1: "Private Cooking Class Rome: приватний кулінарний досвід у Римі",
+    primaryKeyword: "Private Cooking Class Rome",
+    metaDescription:
+      "Private cooking class Rome у Cucina Roma: індивідуальний формат для пар, святкувань і компаній з україномовним супроводом та швидким бронюванням.",
     intro:
-      "Landing page for users searching a private culinary experience in Rome with flexible timing, small groups and direct booking.",
+      "Сторінка об'єднує private intent, включаючи couples/team/birthday, щоб прибрати doorway-дублікати і посилити один авторитетний URL.",
     highlights: [
-      "Private format with personal attention from the chef.",
-      "Good fit for couples, friends and family travelers.",
-      "Choose pizza, pasta or gnocchi format with tiramisu.",
-      "Simple confirmation via website or WhatsApp.",
+      "Merged intent: couples + birthday + team building.",
+      "UA-first текст з EN markers.",
+      "Чіткий CTA на conversion page.",
+      "Back-link на hub і релевантні sibling сторінки.",
+      "Консолідація authority.",
     ],
     keywords: [
       "private cooking class rome",
-      "private pasta class rome",
-      "private pizza class rome",
-      "private italian cooking class rome",
+      "couples cooking class rome",
+      "team building cooking class rome",
+      "birthday cooking class rome",
     ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu"],
+    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu", "wino"],
+    ctaMasterPage: "pasta_tiramisu",
+    relatedSeoSlugs: ["cooking-class-rome", "pizza-class-rome", "family-cooking-class-rome", "wine-tasting-rome"],
+    contentAngles: [
+      "Чому private intent треба консолідувати",
+      "Сценарії couples, birthday, team без клонування URL",
+      "UA-first value proposition для основної аудиторії",
+      "English intent terms для Google coverage",
+      "Передача authority на master pages",
+      "Внутрішня навігація через hub і sibling links",
+      "Глибокий контент замість doorway шаблонів",
+      "Підтримка і масштабування без cannibalization",
+    ],
   },
   {
     slug: "family-cooking-class-rome",
     navTitle: "Family Cooking Class Rome",
-    eyebrow: "seo page",
-    h1: "Family Cooking Class Rome for travelers with kids",
+    eyebrow: "SEO page",
+    h1: "Family Cooking Class Rome: кулінарний формат для родин у Римі",
+    primaryKeyword: "Family Cooking Class Rome",
+    metaDescription:
+      "Family cooking class Rome у Cucina Roma: комфортний темп для батьків і дітей, практичне заняття, central Rome локація та просте бронювання.",
     intro:
-      "Landing page for family-oriented search intent. It positions Cucina Roma as an easy and engaging food activity in Rome for parents and children.",
+      "Сторінка під family intent для батьків, які шукають зручний кулінарний досвід у Римі для себе та дітей.",
     highlights: [
-      "Interactive hands-on format with clear step-by-step guidance.",
-      "Comfortable pace for families on holiday.",
-      "Popular options: pizza + tiramisu or pasta + tiramisu.",
-      "Central location and straightforward booking process.",
+      "Family-first логіка сторінки.",
+      "UA-first пояснення для швидкого вибору.",
+      "English travel keywords для видимості.",
+      "CTA на релевантний master формат.",
+      "Контекстні переходи на hub/private/pasta.",
     ],
     keywords: [
       "family cooking class rome",
-      "cooking class in rome for families",
       "kids cooking class rome",
       "family food experience rome",
+      "кулінарний майстер-клас для сім'ї рим",
     ],
     relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu"],
-  },
-  {
-    slug: "couples-cooking-class-rome",
-    navTitle: "Couples Cooking Class Rome",
-    eyebrow: "seo page",
-    h1: "Couples Cooking Class Rome for romantic trips",
-    intro:
-      "Landing page for couple-focused queries where travelers seek a memorable date-style food experience in Rome.",
-    highlights: [
-      "Date-friendly format for two guests.",
-      "Cooking + tasting in one session.",
-      "Options with pizza, pasta or wine tasting in Rome.",
-      "Great fit for anniversaries and proposal trips.",
+    ctaMasterPage: "pizza_tiramisu",
+    relatedSeoSlugs: ["cooking-class-rome", "pasta-class-rome", "private-cooking-class-rome", "cooking-class-near-vatican"],
+    contentAngles: [
+      "Family intent як окремий пошуковий сценарій",
+      "Що критично для батьків перед бронюванням",
+      "UA-first подача як фактор довіри",
+      "English coverage для глобальних family запитів",
+      "Передача трафіку на conversion URL",
+      "Internal links за наміром, а не випадково",
+      "Анти-doorway стратегія для family кластера",
+      "Оновлення сторінки без створення клонів",
     ],
-    keywords: [
-      "couples cooking class rome",
-      "romantic cooking class rome",
-      "date night cooking class rome",
-      "food experience for couples rome",
-    ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "wino"],
-  },
-  {
-    slug: "team-building-cooking-class-rome",
-    navTitle: "Team Building Cooking Class Rome",
-    eyebrow: "seo page",
-    h1: "Team Building Cooking Class Rome for small corporate groups",
-    intro:
-      "Landing page for business and group requests where companies need a practical team-building activity during Rome visits.",
-    highlights: [
-      "Group-friendly format for corporate and agency bookings.",
-      "Clear scenario: cook together, then taste together.",
-      "Can be adapted for mixed teams and international guests.",
-      "Direct inquiry flow to confirm date and group size.",
-    ],
-    keywords: [
-      "team building cooking class rome",
-      "corporate cooking class rome",
-      "group cooking experience rome",
-      "company event rome cooking class",
-    ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu"],
-  },
-  {
-    slug: "birthday-cooking-class-rome",
-    navTitle: "Birthday Cooking Class Rome",
-    eyebrow: "seo page",
-    h1: "Birthday Cooking Class Rome for private celebrations",
-    intro:
-      "Landing page for celebration intent where users look for a birthday activity in Rome with food, social interaction and easy planning.",
-    highlights: [
-      "Private celebration format for birthdays and special dates.",
-      "Experience includes cooking, tasting and shared photos.",
-      "Suitable for friend groups and family celebrations.",
-      "Fast booking confirmation and clear pricing on service pages.",
-    ],
-    keywords: [
-      "birthday cooking class rome",
-      "birthday activity rome food",
-      "private birthday experience rome",
-      "celebration cooking class rome",
-    ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "wino"],
   },
   {
     slug: "ukrainian-speaking-cooking-class-rome",
     navTitle: "Ukrainian Speaking Cooking Class Rome",
-    eyebrow: "seo page",
-    h1: "Ukrainian speaking cooking class in Rome",
+    eyebrow: "SEO page",
+    h1: "Ukrainian Speaking Cooking Class Rome: майстер-клас з супроводом українською",
+    primaryKeyword: "Ukrainian Speaking Cooking Class Rome",
+    metaDescription:
+      "Ukrainian speaking cooking class Rome у Cucina Roma: повний супровід українською, практичний формат у центрі Риму та швидке бронювання онлайн.",
     intro:
-      "Landing page focused on Ukrainian-speaking travelers in Italy who want a local culinary experience without language barriers.",
+      "Ключова сторінка для основної аудиторії бренду: україномовних гостей, яким важливо отримати кулінарний досвід без мовного бар'єру.",
     highlights: [
-      "Ukrainian-language support during the full experience.",
-      "Clear explanations for first-time participants.",
-      "Central Rome location and tourist-friendly format.",
-      "Convenient communication through WhatsApp.",
+      "Language-first intent з високим потенціалом конверсії.",
+      "Максимально україномовна подача.",
+      "EN keywords для міжнародної індексації.",
+      "Сильний CTA на master сторінки.",
+      "Зв'язок із hub, family, private, location гілками.",
     ],
     keywords: [
       "ukrainian speaking cooking class rome",
       "cooking class rome for ukrainians",
-      "україномовний майстер клас рим",
-      "майстер клас рим українською",
+      "rome cooking class ukrainian language",
+      "майстер-клас рим українською",
     ],
     relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu"],
+    ctaMasterPage: "pasta_tiramisu",
+    relatedSeoSlugs: ["cooking-class-rome", "family-cooking-class-rome", "private-cooking-class-rome", "cooking-class-near-vatican"],
+    contentAngles: [
+      "Мовний фактор як драйвер рішення про бронювання",
+      "UA-first контент без втрати SEO потенціалу",
+      "Роль English signals у міжнародній видачі",
+      "Побудова довіри через зрозумілу комунікацію",
+      "Передача authority на conversion pages",
+      "Internal linking для кластерної цілісності",
+      "Уникнення дрібних мовних doorway URL",
+      "Довгострокове масштабування language кластера",
+    ],
   },
   {
     slug: "cooking-class-near-vatican",
     navTitle: "Cooking Class Near Vatican",
-    eyebrow: "seo page",
-    h1: "Cooking Class Near Vatican in Rome",
+    eyebrow: "SEO page",
+    h1: "Cooking Class Near Vatican: зручний кулінарний досвід біля Vatican",
+    primaryKeyword: "Cooking Class Near Vatican",
+    metaDescription:
+      "Cooking class near Vatican у Cucina Roma: зручна локація для туристичного маршруту, практичний формат, україномовна комунікація та швидке бронювання.",
     intro:
-      "Landing page for high-intent geo queries where users search nearby activities after visiting Vatican and central attractions.",
+      "Сторінка працює з високонамірним гео-запитом near Vatican і швидко веде користувача до релевантного формату класу.",
     highlights: [
-      "Strong geo relevance for central Rome visitors.",
-      "Convenient format for same-day or next-day plans.",
-      "Popular classes: pizza, pasta, gnocchi and tiramisu.",
-      "Simple booking funnel with short decision path.",
+      "Geo intent: near Vatican.",
+      "UA-first пояснення для швидкого рішення.",
+      "English local markers для пошуку.",
+      "CTA на master conversion pages.",
+      "Контекстний зв'язок із hub і форматними сторінками.",
     ],
     keywords: [
       "cooking class near vatican",
       "vatican cooking class rome",
       "central rome cooking class",
-      "food activity near vatican",
+      "майстер-клас біля ватикану рим",
     ],
     relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu"],
-  },
-  {
-    slug: "corsi-di-cucina-roma",
-    navTitle: "Corsi Di Cucina Roma",
-    eyebrow: "seo page",
-    h1: "Corsi di cucina a Roma per turisti internazionali",
-    intro:
-      "Landing page for Italian-language search intent to capture additional demand from multilingual users planning food experiences in Rome.",
-    highlights: [
-      "Italian keyword targeting for local and multilingual traffic.",
-      "Practical class options in central Rome.",
-      "Formats include pizza, pasta, gnocchi and wine tasting.",
-      "Direct conversion path to booking and FAQ pages.",
+    ctaMasterPage: "pizza_tiramisu",
+    relatedSeoSlugs: ["cooking-class-rome", "pizza-class-rome", "wine-tasting-rome", "family-cooking-class-rome"],
+    contentAngles: [
+      "Geo intent як сигнал високої готовності",
+      "Різниця між Vatican і broad city-center запитами",
+      "UA-first логіка для туристичного UX",
+      "English local terms для SERP coverage",
+      "Передача authority і трафіку на /master/*",
+      "Internal links для повного journey",
+      "Локальна релевантність без doorway-pattern",
+      "Масштабування local SEO без дублювання",
     ],
-    keywords: [
-      "corsi di cucina roma",
-      "corso di cucina roma centro",
-      "esperienza culinaria roma",
-      "lezione di cucina a roma",
-    ],
-    relatedMasterPages: ["pizza_tiramisu", "pasta_tiramisu", "nioki_tiramisu", "wino"],
   },
 ];
+
+export const seoLandingPagesBySlug = Object.fromEntries(
+  seoLandingPages.map((page) => [page.slug, page]),
+) as Record<string, SeoLandingPageData>;
+

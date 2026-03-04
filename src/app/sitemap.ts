@@ -1,8 +1,7 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { dataMaster } from "@/data/dataMaster";
 import { seoLandingPages } from "@/data/seoLandingPages";
-
-const BASE_URL = "https://www.cucinaroma.com.ua";
+import { BASE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -20,12 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-      url: `${BASE_URL}/seo`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
   ];
 
   const masterPages: MetadataRoute.Sitemap = dataMaster.map((item) => ({
@@ -35,11 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const seoPages: MetadataRoute.Sitemap = seoLandingPages.map((item) => ({
-    url: `${BASE_URL}/seo/${item.slug}`,
+  const seoPages: MetadataRoute.Sitemap = seoLandingPages.map((page) => ({
+    url: `${BASE_URL}/seo/${page.slug}`,
     lastModified,
     changeFrequency: "weekly",
-    priority: 0.75,
+    priority: page.slug === "cooking-class-rome" ? 0.9 : 0.8,
   }));
 
   return [...staticPages, ...masterPages, ...seoPages];
