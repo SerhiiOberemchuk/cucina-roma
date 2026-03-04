@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ItemLinks from "@/components/common/Links/ItemLinks";
 import { arrayCookiesPages } from "@/data/cookies_pages/arrayCoociesPages";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Документи",
+  title: "Legal Documents | Cucina Roma",
   description:
-    "Юридична інформація, політика cookies та відмова від відповідальності Cucina Roma.",
+    "Legal information, cookie policy, and disclaimers for Cucina Roma guests and website visitors.",
   alternates: {
     canonical: "/docs",
   },
@@ -14,12 +15,28 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Документи | Cucina Roma",
+    title: "Legal Documents | Cucina Roma",
     description:
-      "Юридична інформація, політика cookies та відмова від відповідальності.",
+      "Legal information, cookie policy, and disclaimers for Cucina Roma website visitors.",
     url: "/docs",
+    siteName: "Cucina Roma",
     type: "website",
     locale: "uk_UA",
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Cucina Roma Legal Documents",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Legal Documents | Cucina Roma",
+    description:
+      "Legal information, cookie policy, and disclaimers for Cucina Roma website visitors.",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

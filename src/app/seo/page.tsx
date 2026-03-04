@@ -10,33 +10,30 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...buildPageMetadata({
     pathname: "/seo",
-    primaryKeyword: "Cooking Class Rome Hub",
+    primaryKeyword: "Rome Cooking Classes by Format",
     description:
-      "Навігаційна сторінка SEO кластера Cucina Roma з переходами на ключові intent-сторінки для cooking class Rome і прямими шляхами до booking pages.",
+      "Огляд сторінок Cucina Roma за форматами: pizza class, pasta class, private class, family class, wine tasting та cooking class near Vatican у Римі.",
     type: "website",
   }),
-  robots: {
-    index: false,
-    follow: true,
-  },
 };
 
 export default function SeoPage() {
   return (
     <section className="py-10 xl:py-20">
       <Container>
-        <SubtitlePoint text="SEO навігація" />
+        <SubtitlePoint text="Навігація за форматами" />
         <TitleSection
-          title="Тематичні SEO сторінки Cucina Roma"
+          title="Кулінарні формати Cucina Roma"
           className="mt-6"
         />
         <TextBody className="mt-6 max-w-[900px]">
-          Ця сторінка є технічною навігацією кластера. Основний indexable hub:
+          Оберіть формат, який найкраще підходить під ваш запит у Римі. Ось
+          головна сторінка з усіма напрямками:
           <Link
             href="/seo/cooking-class-rome"
             className="text-main_blue hover:text-hover ml-1 inline-flex transition-all duration-300"
           >
-            /seo/cooking-class-rome
+            Cooking Class Rome
           </Link>
           .
         </TextBody>

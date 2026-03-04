@@ -19,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/seo`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
   ];
 
   const masterPages: MetadataRoute.Sitemap = dataMaster.map((item) => ({
