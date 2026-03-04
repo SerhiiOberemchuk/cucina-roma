@@ -1,12 +1,10 @@
-﻿import type { MetadataRoute } from "next";
-import { dataMaster } from "@/data/dataMaster";
-import { seoLandingPages } from "@/data/seoLandingPages";
+import type { MetadataRoute } from "next";
 import { BASE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const staticPages: MetadataRoute.Sitemap = [
+  return [
     {
       url: `${BASE_URL}/`,
       lastModified,
@@ -25,21 +23,83 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.85,
     },
+    {
+      url: `${BASE_URL}/master/pizza_tiramisu`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/master/pasta_tiramisu`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/master/nioki_tiramisu`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/master/wino`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/cooking-class-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/seo/pizza-class-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/pasta-class-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/tiramisu-class-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/wine-tasting-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/private-cooking-class-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/family-cooking-class-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/ukrainian-speaking-cooking-class-rome`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/seo/cooking-class-near-vatican`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
-
-  const masterPages: MetadataRoute.Sitemap = dataMaster.map((item) => ({
-    url: `${BASE_URL}/master/${item.page}`,
-    lastModified,
-    changeFrequency: "weekly",
-    priority: 0.8,
-  }));
-
-  const seoPages: MetadataRoute.Sitemap = seoLandingPages.map((page) => ({
-    url: `${BASE_URL}/seo/${page.slug}`,
-    lastModified,
-    changeFrequency: "weekly",
-    priority: page.slug === "cooking-class-rome" ? 0.9 : 0.8,
-  }));
-
-  return [...staticPages, ...masterPages, ...seoPages];
 }

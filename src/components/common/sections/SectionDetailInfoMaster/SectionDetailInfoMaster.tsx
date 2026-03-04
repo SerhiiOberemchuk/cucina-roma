@@ -1,21 +1,39 @@
 import Container from "../../Container";
 import WhatsAppLink from "../../Links/WhatsAppLink";
 import SubtitlePoint from "../../SubtitlePoint";
-import { dataDetailInfoMaster } from "@/data/dataDetailInfoMaster";
 import Image from "next/image";
 import IconPrice from "@/assets/icons/icon_price.svg";
 import IconTime from "@/assets/icons/icon_time.svg";
 import IconLoction from "@/assets/icons/icon_location.svg";
-import { DataCardMaster, dataMaster } from "@/data/dataMaster";
 import TextBody from "../../TextBody";
 import FormGetUserData from "../../forms/FormGetUserData";
 
-function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
-  const { subtitle, imageUrl, title, location, describe } =
-    dataDetailInfoMaster[page];
-  const { prise, duration } = dataMaster.filter(
-    (item) => item.page === page,
-  )[0];
+export type MasterDetailContent = {
+  subtitle: string;
+  imageUrl: string;
+  title: string;
+  location: string;
+  describe: string[];
+  priceEur: number;
+  durationHours: number;
+  includeProsecco?: boolean;
+};
+
+type Props = {
+  content: MasterDetailContent;
+};
+
+function SectionDetailInfoMaster({ content }: Props) {
+  const {
+    subtitle,
+    imageUrl,
+    title,
+    location,
+    describe,
+    priceEur,
+    durationHours,
+    includeProsecco = true,
+  } = content;
 
   return (
     <section className="py-6">
@@ -34,10 +52,10 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
             <h1 className="textH3 text-text">{title}</h1>
             <ul className="flex flex-col gap-3">
               <li className="btn_text text-grey_stroke_logo flex gap-2">
-                <IconPrice /> <span>{prise}€ за особу</span>
+                <IconPrice /> <span>{priceEur}€ за особу</span>
               </li>
               <li className="btn_text text-grey_stroke_logo flex gap-2">
-                <IconTime /> <span>{duration} години</span>
+                <IconTime /> <span>{durationHours} години</span>
               </li>
               <li className="btn_text text-grey_stroke_logo flex gap-2">
                 <IconLoction /> <span>{location}</span>
@@ -49,7 +67,7 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
                   <TextBody className="text-text">{item}</TextBody>
                 </li>
               ))}
-              {page !== "wino" && (
+              {includeProsecco && (
                 <li>
                   <p className="btn_text text-text">
                     У вартість входить келих Prosecco!
@@ -60,7 +78,7 @@ function SectionDetailInfoMaster({ page }: Pick<DataCardMaster, "page">) {
             <FormGetUserData
               className="mt-0"
               service={title}
-              prise={prise}
+              prise={priceEur}
               imageUrl={imageUrl}
             />
           </div>
