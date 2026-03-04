@@ -1,27 +1,27 @@
-﻿import Script from "next/script";
-import { DataCardMaster, dataMaster } from "@/data/dataMaster";
-import { dataDetailInfoMaster } from "@/data/dataDetailInfoMaster";
+import Script from "next/script";
 import { BASE_URL, getAbsoluteUrl } from "@/lib/seo";
 
-type Props = {
-  page: DataCardMaster["page"];
+export type MasterJsonLdContent = {
+  pathname: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  durationHours: number;
+  priceEur: number;
 };
 
-export default function MasterJsonLd({ page }: Props) {
-  const master = dataMaster.find((item) => item.page === page);
-  const detail = dataDetailInfoMaster[page];
+type Props = {
+  content: MasterJsonLdContent;
+};
 
-  if (!master || !detail) {
-    return null;
-  }
-
-  const pageUrl = getAbsoluteUrl(`/master/${page}`);
+export default function MasterJsonLd({ content }: Props) {
+  const pageUrl = getAbsoluteUrl(content.pathname);
   const offerId = `${pageUrl}#offer`;
   const eventId = `${pageUrl}#event`;
 
   return (
     <Script
-      id={`master-schema-${page}`}
+      id={`master-schema-${content.pathname.replace(/\W+/g, "-")}`}
       type="application/ld+json"
       strategy="afterInteractive"
       dangerouslySetInnerHTML={{
@@ -32,7 +32,7 @@ export default function MasterJsonLd({ page }: Props) {
               "@type": "Offer",
               "@id": offerId,
               url: pageUrl,
-              price: master.prise,
+              price: content.priceEur,
               priceCurrency: "EUR",
               availability: "https://schema.org/InStock",
               category: "CookingClass",
@@ -43,11 +43,11 @@ export default function MasterJsonLd({ page }: Props) {
             {
               "@type": "Event",
               "@id": eventId,
-              name: detail.title,
-              description: detail.describe.join(" "),
+              name: content.title,
+              description: content.description,
               eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
               eventStatus: "https://schema.org/EventScheduled",
-              duration: `PT${master.duration}H`,
+              duration: `PT${content.durationHours}H`,
               location: {
                 "@type": "Place",
                 name: "Cucina Roma",
@@ -70,7 +70,7 @@ export default function MasterJsonLd({ page }: Props) {
               offers: {
                 "@id": offerId,
               },
-              image: [getAbsoluteUrl(detail.imageUrl)],
+              image: [getAbsoluteUrl(content.imageUrl)],
             },
           ],
         }),
@@ -78,4 +78,3 @@ export default function MasterJsonLd({ page }: Props) {
     />
   );
 }
-

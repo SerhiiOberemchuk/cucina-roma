@@ -3,7 +3,6 @@ import Link from "next/link";
 import Container from "@/components/common/Container";
 import FaqSection from "@/components/HomePage/FaqSection/FaqSection";
 import SEOHomeFaqJsonLd from "@/utils/SEOHomeFaqJsonLd";
-import { seoLandingPages } from "@/data/seoLandingPages";
 import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,16 +25,78 @@ export default function FaqPage() {
           Корисні сторінки за форматами
         </h2>
         <ul className="flex flex-col gap-2">
-          {seoLandingPages.map((page) => (
-            <li key={page.slug}>
-              <Link
-                href={`/seo/${page.slug}`}
-                className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
-              >
-                {page.navTitle}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link
+              href="/seo/cooking-class-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Cooking Class Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/pizza-class-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Pizza Class Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/pasta-class-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Pasta Class Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/tiramisu-class-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Tiramisu Class Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/wine-tasting-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Wine Tasting Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/private-cooking-class-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Private Cooking Class Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/family-cooking-class-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Family Cooking Class Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/ukrainian-speaking-cooking-class-rome"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Ukrainian Speaking Cooking Class Rome
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/seo/cooking-class-near-vatican"
+              className="hover:text-hover active:text-pressed text-main_blue transition-all duration-300"
+            >
+              Cooking Class Near Vatican
+            </Link>
+          </li>
         </ul>
       </Container>
       <SEOHomeFaqJsonLd />
